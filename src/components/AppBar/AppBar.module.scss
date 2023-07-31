@@ -1,0 +1,41 @@
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #ffffff;
+  color: var(--primary-color);
+  text-align: center;
+  padding: 16px;
+  border-bottom: 1px solid #7b61ff;
+}
+
+.toolbar {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+}
+
+.title {
+  font-family: Alata, sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 33px;
+  letter-spacing: 0em;
+  text-align: left;
+}
