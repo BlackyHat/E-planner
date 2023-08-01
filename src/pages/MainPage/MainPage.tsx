@@ -1,10 +1,13 @@
+import EventList from '../../components/EventList/EventList';
 import EventsToolbar from '../../components/EventsToolbar/EventsToolbar';
-import scss from './MainPage.module.scss';
+import PaginatedItems from '../../components/Pagination/Pagination';
 
 export const MainPage = () => {
   return (
-    <div className={scss.main}>
+    <>
       <EventsToolbar />
-    </div>
+      <EventList />
+      <PaginatedItems itemsPerPage={1} />
+    </>
   );
 };
