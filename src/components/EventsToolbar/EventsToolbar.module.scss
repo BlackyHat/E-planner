@@ -1,0 +1,45 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-width: 56px;
+  height: 56px;
+  padding: 16px;
+  border-radius: 8px;
+  gap: 16px;
+  box-shadow: 2px 4px 9px 0px #a68dae47;
+  border: none;
+  background: #ffffff;
+  cursor: pointer;
+
+  &:hover > .buttonIcon {
+    color: #7b61ff;
+  }
+}
+.buttonLabel {
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: inline-block;
+  }
+}
+.active {
+  background-color: var(--primary-color);
+  & > .buttonIcon,
+  & > .buttonLabel {
+    color: #ffffff;
+  }
+}
+.buttonIcon {
+  width: 24px;
+  height: 24px;
+  color: inherit;
+}
+.toolbar {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+  margin: 0;
+}

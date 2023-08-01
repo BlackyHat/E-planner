@@ -4,17 +4,13 @@ import scss from './AppBar.module.scss';
 
 const AppBar = () => {
   return (
-    <div className={scss.wrapper}>
-      <header className={scss.header}>
-        <div className={scss.container}>
-          <h1 className={scss.title}>Event Planner</h1>
-          <div className={scss.toolbar}>
-            <Filter />
-            <LangSwitcher />
-          </div>
-        </div>
-      </header>
-    </div>
+    <header className={scss.header}>
+      <div className={scss.container}>
+        <span className={scss.title}>Event Planner</span>
+        <Filter />
+        <LangSwitcher />
+      </div>
+    </header>
   );
 };
 

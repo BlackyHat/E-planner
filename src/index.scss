@@ -19,10 +19,21 @@ a {
   text-decoration: inherit;
 }
 
+body {
+  min-height: 100vh;
+}
+
+/* Avoid Chrome to see Safari hack */
+@supports (-webkit-touch-callout: none) {
+  body {
+    /* The hack for Safari */
+    height: -webkit-fill-available;
+  }
+}
+
 html,
 body {
   margin: 0;
-  height: 100%;
 }
 
 html {

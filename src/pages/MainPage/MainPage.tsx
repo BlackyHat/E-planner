@@ -1,8 +1,10 @@
+import EventsToolbar from '../../components/EventsToolbar/EventsToolbar';
+import scss from './MainPage.module.scss';
+
 export const MainPage = () => {
-  console.log('object');
   return (
-    <div>
-      <h1>MainPage</h1>
+    <div className={scss.main}>
+      <EventsToolbar />
     </div>
   );
 };

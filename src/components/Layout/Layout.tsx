@@ -5,11 +5,15 @@ import AppBar from '../AppBar/AppBar';
 
 const Layout = () => {
   return (
-    <div className={scss.container}>
+    <div className={scss.wrapper}>
       <AppBar />
-      <Suspense fallback={null}>
-        <Outlet />
-      </Suspense>
+      <main className={scss.main}>
+        <div className={scss.container}>
+          <Suspense fallback={null}>
+            <Outlet />
+          </Suspense>
+        </div>
+      </main>
     </div>
   );
 };

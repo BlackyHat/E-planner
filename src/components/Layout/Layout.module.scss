@@ -1,7 +1,25 @@
-.container {
-  max-width: 1440px;
+.wrapper {
   margin: 0 auto;
   background-color: rgb(255, 255, 255);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  max-width: 378px;
+  margin: 0 auto;
+  @media screen and (min-width: 768px) {
+    max-width: 7680px;
+  }
+  @media screen and (min-width: 1280px) {
+    max-width: 1440px;
+  }
+}
+
+.main {
+  flex: 1 1 auto;
+  padding: 24px;
+
   background-image: url(../../assets/bg.svg);
   background-repeat: no-repeat;
   background-size: cover;
