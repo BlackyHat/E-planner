@@ -1,0 +1,35 @@
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 16px 12px;
+  border-radius: 8px;
+  border: 1px solid grey;
+  color: var(--primary-color);
+  background-color: var(--primary-white-color);
+  outline: none;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  margin-bottom: 20px;
+  &::placeholder {
+    color: var(--primary-color);
+  }
+
+  &.isInvalid {
+    border: 1px solid var(--error-color);
+  }
+}
+
+.openIconWrapper {
+  padding: 8px;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-70%);
+  cursor: pointer;
+}
+.openIcon {
+  color: var(--primary-color);
+}

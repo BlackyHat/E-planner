@@ -1,4 +1,8 @@
 @import './fonts/fonts.scss';
+@import 'react-datepicker/dist/react-datepicker.css';
+@import './components/DatePickerField/DatePickerField.module.scss';
+@import './components/TimePickerField/TimePickerField.module.scss';
+
 :root {
   font-family: Poppins, system-ui, sans-serif;
   line-height: 1.5;
@@ -8,6 +12,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
 }
 
 a {

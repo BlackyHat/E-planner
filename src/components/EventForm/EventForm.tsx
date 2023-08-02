@@ -1,10 +1,14 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form } from 'formik';
 import { toast } from 'react-hot-toast';
 import { eventSchema } from '../../validation/validationYup';
-import { clsx } from 'clsx';
+// import { clsx } from 'clsx';
 import scss from './EventForm.module.scss';
 import MyTextField from '../MyTextField/MyTextField';
 import MyTextareaField from '../MyTextareaField/MyTextareaField';
+import DatePickerField from '../DatePickerField/DatePickerField';
+import TimePickerField from '../TimePickerField/TimePickerField';
+import MySelectField from '../MySelectField/MySelectField';
+import { eventCategories } from '../../helpers/enums';
 
 const type = null;
 const eventId = null;
@@ -15,8 +19,8 @@ const EventForm = () => {
     const initValues = {
       title: '',
       description: '',
-      date: '',
-      time: '',
+      date: undefined,
+      time: undefined,
       location: '',
       category: '',
       priority: '',
@@ -50,18 +54,7 @@ const EventForm = () => {
         }
       }}
     >
-      {({
-        submitForm,
-        values,
-        isSubmitting,
-        errors,
-        touched,
-        dirty,
-        isValid,
-      }) => {
-        console.log('🚀 ~ EventForm ~ errors:', errors);
-        console.log(isValid, 'isValid');
-        console.log(dirty, 'dirty');
+      {({ submitForm, values, isSubmitting, errors, dirty, isValid }) => {
         return (
           <Form className={scss.formContainer}>
             <MyTextField
@@ -78,12 +71,42 @@ const EventForm = () => {
               component="textarea"
               rows={5}
             />
+            <DatePickerField name="date" initialValue={values.date} />
+            <TimePickerField name="time" initialValue={values.time} />
             <MyTextField
               label="Location"
               name="location"
               type="text"
               placeholder="Type some location..."
             />
+            <MySelectField
+              label="Category"
+              name="category"
+              type="text"
+              placeholder="Choose category"
+            >
+              {Object.values(eventCategories).map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
+              {/* <option value={eventCategories.ART}>{eventCategories.ART}</option> */}
+              {/* <option value={eventCategories.BUSINESS}>
+                {eventCategories.BUSINESS}
+              </option>
+              <option value={eventCategories.CONFERENCE}>
+                {eventCategories.CONFERENCE}
+              </option> */}
+              {/*<option value={eventCategories.MUSIC}>
+                {eventCategories.MUSIC}
+              </option>
+              <option value={eventCategories.PARTY}>
+                {eventCategories.PARTY}
+              </option>
+              <option value={eventCategories}>{eventCategories}</option>
+              <option value={eventCategories}>{eventCategories}</option>
+              <option value={eventCategories}>{eventCategories}</option> */}
+            </MySelectField>
 
             {/* <Field
             type="text"

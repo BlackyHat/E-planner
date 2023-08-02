@@ -1,6 +1,7 @@
 import { useField, FieldHookConfig } from 'formik';
 import { DetailedHTMLProps, SelectHTMLAttributes } from 'react';
-import scss from './MyTextField.module.scss';
+import scss from './MySelectField.module.scss';
+import clsx from 'clsx';
 
 interface MySelectField {
   label: string;
@@ -18,9 +19,16 @@ const MySelectField = ({
   const [field, meta] = useField(props);
   return (
     <>
-      <label>
+      <label className={scss.label}>
         {label}
-        <select {...field} {...props} />
+        <select
+          {...field}
+          {...props}
+          className={clsx(
+            scss.input,
+            meta.error && meta.touched ? scss.isInvalid : ''
+          )}
+        />
       </label>
       {meta.touched && meta.error ? (
         <div className={scss.errorMessage}>{meta.error}</div>
