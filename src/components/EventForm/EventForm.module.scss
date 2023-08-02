@@ -1,0 +1,38 @@
+.formContainer {
+  //   display: flex;
+  //   flex: column;
+}
+.form {
+}
+.input {
+}
+.label {
+}
+
+.submitButton {
+  display: block;
+  width: 100%;
+  padding: 16px 24px;
+
+  background-color: var(--primary-color);
+  color: var(--primary-white-color);
+  border-radius: 8px;
+  border: none;
+
+  box-shadow: 2px 4px 9px 0px #a68dae47;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+
+  &:hover,
+  &:focus {
+    background-color: #6650d0;
+  }
+
+  &:disabled {
+    opacity: 0.35;
+  }
+}

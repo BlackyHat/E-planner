@@ -17,9 +17,6 @@
   & > li {
     width: 64px;
     height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
 
     font-size: 18px;
@@ -29,6 +26,14 @@
     text-align: center;
     transition: box-shadow 350ms ease-in-out, color 350ms ease-in-out;
     color: #aca7c3;
+
+    & > a {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   & > li:hover {

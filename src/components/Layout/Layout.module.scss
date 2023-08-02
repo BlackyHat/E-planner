@@ -1,6 +1,6 @@
 .wrapper {
   margin: 0 auto;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--primary-white-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;

@@ -56,15 +56,3 @@ const EventListItem: React.FC<EventProps> = ({ data }) => {
 };
 
 export default EventListItem;
-
-/**
-     
-      <img className={scss.poster} src={poster} />
-      <div className={scss.dateInner}> 
-      <div className={scss.cardLabel}>
-        <span className={scss.dateLabel}>
-          {date} at {time}
-        </span>
-        <span className={scss.location}>{location}</span>
-      </div>
-      */

@@ -3,8 +3,10 @@ import scss from './EventsToolbar.module.scss';
 import { CiFilter } from 'react-icons/ci';
 import { GrSort } from 'react-icons/gr';
 import { VscAdd } from 'react-icons/vsc';
+import { useNavigate } from 'react-router-dom';
 
 const EventsToolbar = () => {
+  const navigate = useNavigate();
   return (
     <ul className={scss.toolbar}>
       <li>
@@ -33,7 +35,9 @@ const EventsToolbar = () => {
         <button
           type="button"
           className={clsx([scss.button, scss.active])}
-          onClick={() => {}}
+          onClick={() => {
+            navigate('/create-event');
+          }}
           title="Add new event"
         >
           <VscAdd className={scss.buttonIcon} />

@@ -1,6 +1,6 @@
 import { clsx } from 'clsx';
 import scss from './EventCard.module.scss';
-import poster from '../../assets/Rectangle 345@1x.png';
+import poster from '../../assets/Rectangle 350@1x.png';
 
 const EventCard = ({ id }: { id: string }) => {
   console.log(id);

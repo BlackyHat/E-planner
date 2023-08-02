@@ -1,0 +1,43 @@
+.label {
+  position: relative;
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+  margin-bottom: 28px;
+  color: #222222;
+  font-size: 16px;
+  line-height: 1.14;
+}
+
+.input {
+  padding: 14px;
+  padding-left: 18px;
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+
+  border: 1px solid grey;
+  color: #222222;
+  background-color: #fff;
+  border-radius: 12px;
+
+  &::placeholder {
+    color: grey;
+  }
+
+  &.isInvalid {
+    border: 1px solid #ac0a0a;
+  }
+  &.isValid {
+    border: 1px solid #2aa55d;
+  }
+}
+
+.errorMessage {
+  color: #ac0a0a;
+  font-size: 14px;
+  position: absolute;
+  bottom: -20px;
+  left: 18px;
+}
