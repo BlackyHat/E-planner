@@ -1,18 +1,20 @@
-import { useNavigate, useSearchParams } from 'react-router-dom';
-import { IoMdArrowBack } from 'react-icons/io';
-import scss from './EventPage.module.scss';
+import { useParams } from 'react-router-dom';
+
 import EventCard from '../../components/EventCard/EventCard';
+import { toast } from 'react-hot-toast';
+import BackLink from '../../components/BackLink/BackLink';
 
 export const EventPage = () => {
-  const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
-  const eventId = searchParams.get('eventId');
+  const { eventId } = useParams();
+
+  if (!eventId) {
+    toast.error('No data. Something went wrong.');
+    return null;
+  }
+
   return (
     <>
-      <a onClick={() => navigate(-1)} className={scss.backLink}>
-        <IoMdArrowBack className={scss.linkIcon} />
-        Go back
-      </a>
+      <BackLink />
       <EventCard id={eventId} />
     </>
   );

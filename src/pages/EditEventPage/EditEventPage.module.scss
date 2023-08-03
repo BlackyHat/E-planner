@@ -1,0 +1,15 @@
+.title {
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--primary-text-color);
+  margin-bottom: 24px;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 32px;
+    line-height: 48px;
+  }
+}

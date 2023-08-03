@@ -80,6 +80,7 @@
 .chip {
   display: inline-block;
   background-color: var(--primary-white-color);
+  text-transform: capitalize;
   border-radius: 8px;
   padding: 6px 12px;
   font-size: 14px;

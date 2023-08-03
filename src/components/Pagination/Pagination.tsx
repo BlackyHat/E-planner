@@ -1,63 +1,50 @@
-import React, { useState } from 'react';
-import ReactPaginate from 'react-paginate';
-import scss from './Pagination.module.scss';
-import { GrNext, GrPrevious } from 'react-icons/gr';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
-// Example items, to simulate fetching from another resources.
-const items = [
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-];
+import { useAppSelector } from '../../redux/hooks';
+import { selectFilteredEvents } from '../../redux/events/eventSelectors';
+import ReactPaginate from 'react-paginate';
 
-interface ItemsProps {
-  currentItems: number[];
-}
-
-const Items: React.FC<ItemsProps> = ({ currentItems }) => {
-  return (
-    <>
-      {currentItems &&
-        currentItems.map((item) => (
-          <div key={item}>
-            <h3>Item #{item}</h3>
-          </div>
-        ))}
-    </>
-  );
-};
+import EventList from '../EventList/EventList';
+import { GrNext, GrPrevious } from 'react-icons/gr';
+import scss from './Pagination.module.scss';
 
 interface PaginatedItemsProps {
   itemsPerPage: number;
 }
 
-const PaginatedItems: React.FC<PaginatedItemsProps> = ({ itemsPerPage }) => {
-  // Here we use item offsets; we could also use page offsets
-  // following the API or data you're working with.
+const PaginatedItems: React.FC<PaginatedItemsProps> = ({
+  itemsPerPage = 3,
+}) => {
+  const items = useAppSelector(selectFilteredEvents);
+  const [searchParams, setSearchParams] = useSearchParams();
   const [itemOffset, setItemOffset] = useState(0);
 
-  //useMediaQuery
+  useEffect(() => {
+    const page = searchParams.get('page');
+    if (page && Number(page) > 0) {
+      setItemOffset(Number(page) - 1);
+    }
+  }, []);
+  useEffect(() => {
+    setSearchParams({ page: (itemOffset + 1).toString() });
+  }, [itemOffset]);
+
   const isTabletOrMobile = useMediaQuery({ query: '(min-width: 768px)' });
   const pageRangeDisplayed = isTabletOrMobile ? 3 : 2;
 
-  // Simulate fetching items from another resources.
-  // (This could be items from props; or items loaded in a local state
-  // from an API endpoint with useEffect and useState)
   const endOffset = itemOffset + itemsPerPage;
-  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
   const currentItems = items.slice(itemOffset, endOffset);
   const pageCount = Math.ceil(items.length / itemsPerPage);
 
-  // Invoke when user click to request another page.
   const handlePageClick = (event: { selected: number }) => {
     const newOffset = (event.selected * itemsPerPage) % items.length;
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
     setItemOffset(newOffset);
   };
 
   return (
     <>
-      <Items currentItems={currentItems} />
+      <EventList events={currentItems} />
       <ReactPaginate
         breakLabel="..."
         nextLabel={<GrNext value={{ color: 'blue' }} className={scss.next} />}

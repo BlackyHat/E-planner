@@ -1,8 +1,10 @@
+// import EventForm from '../../components/EventForm/EventForm';
+import scss from './EditEventPage.module.scss';
+
 import BackLink from '../../components/BackLink/BackLink';
 import EventForm from '../../components/EventForm/EventForm';
-import scss from './CreateEventPage.module.scss';
 
-export const CreateEventPage = () => {
+export const EditEventPage = () => {
   return (
     <>
       <BackLink />

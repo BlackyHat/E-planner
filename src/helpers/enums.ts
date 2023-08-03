@@ -4,6 +4,13 @@ export enum eventPriorites {
   LOW = 'low',
 }
 
+export enum STATUS {
+  IDLE = 'idle',
+  LOADING = 'loading',
+  SUCCESS = 'success',
+  ERROR = 'error',
+}
+
 export enum eventCategories {
   ART = 'Art',
   MUSIC = 'Music',

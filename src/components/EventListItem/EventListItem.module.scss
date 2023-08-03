@@ -8,6 +8,7 @@
   box-shadow: 2px 4px 9px 0px #a68dae47;
   border-radius: 12px;
   overflow: hidden;
+  height: 480px;
 
   @media screen and (max-width: 767px) {
     &:not(:last-child) {

@@ -1,33 +1,19 @@
-import { useEffect, useState } from 'react';
-import EventList from '../../components/EventList/EventList';
 import EventsToolbar from '../../components/EventsToolbar/EventsToolbar';
 import PaginatedItems from '../../components/Pagination/Pagination';
-import { publicApi } from '../../http/http';
-import { toast } from 'react-hot-toast';
+import { fetchEvents } from '../../redux/events/eventsOperations';
+import { useAppDispatch } from '../../redux/hooks';
+import { useEffect } from 'react';
 
 export const MainPage = () => {
-  const [events, setEvents] = useState([]);
+  const dispatch = useAppDispatch();
+
   useEffect(() => {
-    async function getEvents() {
-      try {
-        const { data } = await publicApi.get('/events');
-        const { events } = data;
-        setEvents(events);
-        toast.success('Events loaded.');
-      } catch (error) {
-        toast.error('Something went wrong.');
-      }
-    }
-
-    getEvents();
-  }, []);
-
-  console.log('🚀 ~ getEvents ~ events:', events);
+    dispatch(fetchEvents());
+  }, [dispatch]);
   return (
     <>
       <EventsToolbar />
-      <EventList />
-      <PaginatedItems itemsPerPage={1} />
+      <PaginatedItems itemsPerPage={4} />
     </>
   );
 };
