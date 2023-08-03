@@ -11,7 +11,8 @@ const LangSwitcher = () => {
 
   const handleOptionChange = (option: string) => {
     setLang(option);
-    toast.success('Language was changed.');
+    toast.success('This feature in development.');
+    // toast.success('Language was changed.');
     setOpen(!open);
   };
   return (

@@ -46,12 +46,21 @@ const EventForm = ({ id }: { id: string }) => {
         try {
           if (eventData && id && values.date) {
             await dispatch(updateEvent({ eventId: id, newEvent: values }));
-            toast.success('Success. The event updated!');
+            // toast.success('Success. The event updated!');
+            toast.promise(dispatch(addEvent(values)), {
+              loading: 'Saving...',
+              success: <b>Success. The event updated!</b>,
+              error: <b>Could not update event.</b>,
+            });
           }
 
           if (!eventData && values.date) {
-            await dispatch(addEvent(values));
-            toast.success('Success. The new event added!');
+            // toast.success('Success. The new event added!');
+            toast.promise(dispatch(addEvent(values)), {
+              loading: 'Saving...',
+              success: <b>The new event added!</b>,
+              error: <b>Could not create.</b>,
+            });
           }
         } catch (error) {
           toast.error('Sorry.Something went wrong.');

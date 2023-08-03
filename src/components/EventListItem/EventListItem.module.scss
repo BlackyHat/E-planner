@@ -107,6 +107,10 @@
   letter-spacing: 0px;
   text-align: left;
   text-transform: capitalize;
+  max-height: 64px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .moreInfoButton {
