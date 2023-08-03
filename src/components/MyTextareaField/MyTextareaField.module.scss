@@ -17,7 +17,7 @@
 }
 
 .input {
-  padding: 16px 32px 16px 12px;
+  padding: 16px 12px 16px 12px;
   border-radius: 8px;
   border: 1px solid grey;
   color: var(--primary-text-color);
@@ -28,7 +28,9 @@
   line-height: 24px;
   letter-spacing: 0px;
   text-align: left;
-
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 32px 32px;
   &::placeholder {
     color: var(--primary-color);
   }

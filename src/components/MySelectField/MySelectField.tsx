@@ -2,6 +2,7 @@ import { useField, FieldHookConfig } from 'formik';
 import { DetailedHTMLProps, SelectHTMLAttributes } from 'react';
 import scss from './MySelectField.module.scss';
 import clsx from 'clsx';
+import { BsChevronCompactDown } from 'react-icons/bs';
 
 interface MySelectField {
   label: string;
@@ -24,6 +25,11 @@ const MySelectField = ({
         <select
           {...field}
           {...props}
+          style={{
+            backgroundImage: `url(${(
+              <BsChevronCompactDown className={scss.openIcon} />
+            )})`,
+          }}
           className={clsx(
             scss.input,
             meta.error && meta.touched ? scss.isInvalid : ''

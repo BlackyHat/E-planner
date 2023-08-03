@@ -55,8 +55,14 @@
     line-height: 16px;
     letter-spacing: 0em;
     text-align: center;
-    width: 32px;
+    width: 28px;
     height: 32px;
+    @media screen and (min-width: 768px) {
+      width: 38px;
+    }
+    @media screen and (min-width: 1440px) {
+      width: 48px;
+    }
   }
   &__day-names {
     font-family: Poppins, system-ui, sans-serif;
@@ -70,8 +76,14 @@
     padding-bottom: 8px;
   }
   &__day-name {
-    width: 32px;
+    width: 28px;
     height: 32px;
+    @media screen and (min-width: 768px) {
+      width: 38px;
+    }
+    @media screen and (min-width: 1440px) {
+      width: 48px;
+    }
   }
   &__day-names > :first-child,
   &__day-names > :last-child {
@@ -91,8 +103,6 @@
   }
 
   &__month-container {
-    max-width: 308px;
-
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -126,14 +136,15 @@
       color: var(--primary-white-color);
     }
     &--today {
-      background-color: #aca7c3;
-      color: var(--primary-white-color);
+      background-color: var(--primary-white-color);
+      color: var(--primary-color);
+      font-weight: 600;
     }
     &:hover,
     &:focus {
       border-radius: 0;
       background-color: var(--primary-color);
-      color: var(--primary-text-color);
+      color: var(--primary-white-color);
     }
   }
 }

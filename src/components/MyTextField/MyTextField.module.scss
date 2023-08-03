@@ -1,6 +1,6 @@
 .label {
   position: relative;
-
+  text-transform: capitalize;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -14,9 +14,15 @@
   line-height: 16px;
   letter-spacing: 0.4px;
   text-align: left;
+
+  & > .input:disabled {
+    color: var(--primary-text-color);
+  }
 }
 
 .input {
+  text-transform: capitalize;
+
   padding: 16px 12px;
   border-radius: 8px;
   border: 1px solid grey;
@@ -31,6 +37,9 @@
 
   &::placeholder {
     color: var(--primary-color);
+  }
+  &:disabled::placeholder {
+    color: var(--primary-text-color);
   }
 
   &.isInvalid {

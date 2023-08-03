@@ -1,12 +1,27 @@
 .formContainer {
-  //   display: flex;
-  //   flex: column;
-}
-.form {
-}
-.input {
-}
-.label {
+  background-color: var(--primary-white-color);
+  padding: 40px 16px;
+  border-radius: 8px;
+  box-shadow: 2px 4px 9px 0px #a68dae47;
+
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 24px 50px;
+    justify-content: center;
+  }
+  @media screen and (min-width: 1440px) {
+    // display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 24px 50px;
+    align-content: center;
+    // & label:nth-of-type(1) {
+    //   order: 2;
+    // }
+    & label:nth-of-type(2) {
+      order: 1;
+    }
+  }
 }
 
 .submitButton {

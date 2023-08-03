@@ -7,10 +7,11 @@ const DatePickerInput = forwardRef(
     props: React.HTMLProps<HTMLInputElement>,
     ref: React.Ref<HTMLInputElement>
   ) => {
-    const { value, onClick, placeholder } = props;
+    const { value, onClick, placeholder, name } = props;
 
     return (
-      <>
+      <label className={scss.label}>
+        {name}
         <input
           value={value}
           onClick={onClick}
@@ -22,7 +23,7 @@ const DatePickerInput = forwardRef(
         <span className={scss.openIconWrapper} onClick={onClick}>
           <BsChevronCompactDown className={scss.openIcon} />
         </span>
-      </>
+      </label>
     );
   }
 );

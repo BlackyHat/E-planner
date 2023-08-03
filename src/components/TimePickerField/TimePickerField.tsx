@@ -18,6 +18,7 @@ const TimePickerField: React.FC<ITimePickerFieldProps> = ({
   return (
     <DatePicker
       selected={selectedTime}
+      name={name}
       showTimeSelect
       showTimeSelectOnly
       timeIntervals={15}

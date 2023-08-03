@@ -8,7 +8,7 @@ import MyTextareaField from '../MyTextareaField/MyTextareaField';
 import DatePickerField from '../DatePickerField/DatePickerField';
 import TimePickerField from '../TimePickerField/TimePickerField';
 import MySelectField from '../MySelectField/MySelectField';
-import { eventCategories } from '../../helpers/enums';
+import { eventCategories, eventPriorites } from '../../helpers/enums';
 
 const type = null;
 const eventId = null;
@@ -29,7 +29,6 @@ const EventForm = () => {
       const eventValues = { ...initValues, eventData };
       return eventValues;
     }
-    console.log('initForm');
     return initValues;
   };
 
@@ -90,55 +89,26 @@ const EventForm = () => {
                   {category}
                 </option>
               ))}
-              {/* <option value={eventCategories.ART}>{eventCategories.ART}</option> */}
-              {/* <option value={eventCategories.BUSINESS}>
-                {eventCategories.BUSINESS}
-              </option>
-              <option value={eventCategories.CONFERENCE}>
-                {eventCategories.CONFERENCE}
-              </option> */}
-              {/*<option value={eventCategories.MUSIC}>
-                {eventCategories.MUSIC}
-              </option>
-              <option value={eventCategories.PARTY}>
-                {eventCategories.PARTY}
-              </option>
-              <option value={eventCategories}>{eventCategories}</option>
-              <option value={eventCategories}>{eventCategories}</option>
-              <option value={eventCategories}>{eventCategories}</option> */}
             </MySelectField>
-
-            {/* <Field
-            type="text"
-            id="title"
-            name="title"
-            placeholder={'Enter the event title'}
-            className={clsx(
-              scss.input,
-              errors.title && touched.title ? scss.isInvalid : '',
-              !errors.title && touched.title ? scss.isValid : ''
-            )}
-          />
-          <ErrorMessage
-            name="address"
-            component="div"
-            className={scss.errorMessage}
-          /> */}
-            {/* <Field
-            minRows={3}
-            maxRows={6}
-            fullWidth={true}
-            id="outlined-multiline-static"
-            multiline
-            margin="dense"
-            name="description"
-            autoComplete="category description"
-            autoFocus
-            placeholder="Enter some description..."
-          /> */}
-            {/* <DatePickerField name="startDate" initialValue={values.dateStart} />
-          <DatePickerField name="endDate" initialValue={values.dateEnd} /> */}
-
+            <MyTextField
+              label="Add picture"
+              name="imageURL"
+              type="text"
+              disabled={true}
+              placeholder="Feature in development..."
+            />
+            <MySelectField
+              label="Priority"
+              name="priority"
+              type="text"
+              placeholder="Choose cateprioritygory"
+            >
+              {Object.values(eventPriorites).map((priority) => (
+                <option key={priority} value={priority}>
+                  {priority}
+                </option>
+              ))}
+            </MySelectField>
             {isSubmitting && <span>Submitting...</span>}
 
             <button

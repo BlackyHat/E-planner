@@ -2,7 +2,6 @@ import React from 'react';
 import { useField, useFormikContext } from 'formik';
 import DatePicker from 'react-datepicker';
 import DatePickerInput from '../DatePickerInput/DatePickerInput';
-
 import scss from './DatePickerField.module.scss';
 
 export interface IDatePickerProps {
@@ -18,6 +17,7 @@ const DatePickerField: React.FC<IDatePickerProps> = ({ name = 'date' }) => {
   return (
     <DatePicker
       dateFormat="dd/MM/yyyy"
+      name={name}
       selected={selectedDate}
       closeOnScroll={true}
       placeholderText="Select date"

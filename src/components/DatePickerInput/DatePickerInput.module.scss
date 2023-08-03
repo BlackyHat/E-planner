@@ -12,7 +12,6 @@
   line-height: 24px;
   letter-spacing: 0px;
   text-align: left;
-  margin-bottom: 20px;
   &::placeholder {
     color: var(--primary-color);
   }
@@ -32,4 +31,22 @@
 }
 .openIcon {
   color: var(--primary-color);
+}
+
+.label {
+  position: relative;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+
+  margin-bottom: 20px;
+  color: var(--primary-color);
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  text-align: left;
 }

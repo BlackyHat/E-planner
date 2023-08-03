@@ -1,7 +1,7 @@
 @import './fonts/fonts.scss';
 @import 'react-datepicker/dist/react-datepicker.css';
-@import './components/DatePickerField/DatePickerField.module.scss';
 @import './components/TimePickerField/TimePickerField.module.scss';
+@import './components/DatePickerField/DatePickerField.module.scss';
 
 :root {
   font-family: Poppins, system-ui, sans-serif;
