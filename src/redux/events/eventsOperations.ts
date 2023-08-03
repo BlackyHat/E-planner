@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { publicApi } from '../../http/http';
 import { IEvent } from '../../helpers/interfaces';
-// import { setDate } from './taskSlice';
 
 interface IUpdateEventProps {
   eventId: string;

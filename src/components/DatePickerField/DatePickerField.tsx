@@ -9,10 +9,15 @@ export interface IDatePickerProps {
   initialValue?: Date | null;
 }
 
-const DatePickerField: React.FC<IDatePickerProps> = ({ name = 'date' }) => {
+const DatePickerField: React.FC<IDatePickerProps> = ({
+  name = 'date',
+  initialValue,
+}) => {
   const { setFieldValue } = useFormikContext();
   const [field] = useField(name);
-  const selectedDate = field.value ? new Date(field.value) : null;
+  const selectedDate = field.value
+    ? new Date(field.value)
+    : initialValue || null;
 
   return (
     <DatePicker

@@ -1,7 +1,6 @@
 import { Formik, Form } from 'formik';
 import { toast } from 'react-hot-toast';
 import { eventSchema } from '../../validation/validationYup';
-// import { clsx } from 'clsx';
 import scss from './EventForm.module.scss';
 import MyTextField from '../MyTextField/MyTextField';
 import MyTextareaField from '../MyTextareaField/MyTextareaField';
@@ -9,24 +8,31 @@ import DatePickerField from '../DatePickerField/DatePickerField';
 import TimePickerField from '../TimePickerField/TimePickerField';
 import MySelectField from '../MySelectField/MySelectField';
 import { eventCategories, eventPriorites } from '../../helpers/enums';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { addEvent, updateEvent } from '../../redux/events/eventsOperations';
+import { selectEventById } from '../../redux/events/eventSelectors';
 
-const type = null;
-const eventId = null;
-const eventData = null;
+const EventForm = ({ id }: { id: string }) => {
+  const eventData = useAppSelector(selectEventById(id));
+  const dispatch = useAppDispatch();
 
-const EventForm = () => {
   const getInitData = () => {
     const initValues = {
       title: '',
       description: '',
-      date: undefined,
-      time: undefined,
+      date: null,
+      time: null,
       location: '',
       category: '',
-      priority: '',
+      priority: eventPriorites.MEDIUM,
     };
-    if (!type && eventData) {
-      const eventValues = { ...initValues, eventData };
+    if (eventData) {
+      const { _id, ...data } = eventData;
+
+      const eventValues = {
+        ...initValues,
+        ...data,
+      };
       return eventValues;
     }
     return initValues;
@@ -37,15 +43,14 @@ const EventForm = () => {
       initialValues={getInitData()}
       validationSchema={eventSchema}
       onSubmit={async (values) => {
-        console.log(values);
         try {
-          if (!type && eventId) {
-            // await updateEvent()
+          if (eventData && id && values.date) {
+            await dispatch(updateEvent({ eventId: id, newEvent: values }));
             toast.success('Success. The event updated!');
           }
 
-          if (type && eventId) {
-            // await addTask()
+          if (!eventData && values.date) {
+            await dispatch(addEvent(values));
             toast.success('Success. The new event added!');
           }
         } catch (error) {
@@ -53,7 +58,7 @@ const EventForm = () => {
         }
       }}
     >
-      {({ submitForm, values, isSubmitting, errors, dirty, isValid }) => {
+      {({ submitForm, isSubmitting, dirty, isValid }) => {
         return (
           <Form className={scss.formContainer}>
             <MyTextField
@@ -70,8 +75,8 @@ const EventForm = () => {
               component="textarea"
               rows={5}
             />
-            <DatePickerField name="date" initialValue={values.date} />
-            <TimePickerField name="time" initialValue={values.time} />
+            <DatePickerField name="date" />
+            <TimePickerField name="time" />
             <MyTextField
               label="Location"
               name="location"
@@ -101,7 +106,7 @@ const EventForm = () => {
               label="Priority"
               name="priority"
               type="text"
-              placeholder="Choose cateprioritygory"
+              placeholder="Choose priority"
             >
               {Object.values(eventPriorites).map((priority) => (
                 <option key={priority} value={priority}>
@@ -117,7 +122,7 @@ const EventForm = () => {
               disabled={isSubmitting || !isValid || !dirty}
               onClick={submitForm}
             >
-              {!type ? 'Add event' : 'Save'}
+              {!eventData ? 'Add event' : 'Save'}
             </button>
           </Form>
         );

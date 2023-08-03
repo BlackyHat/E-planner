@@ -20,12 +20,10 @@ export const eventSchema = Yup.object().shape({
   category: Yup.string()
     .min(3, 'Too Short!')
     .max(250, 'Too Long!')
-    // .required('Type something category')
+    .required('Type something category')
     .trim(),
-  date: Yup.string().min(3, 'Too Short!').max(250, 'Too Long!'),
-  // .required('Type something date'),
-  time: Yup.string().min(3, 'Too Short!').max(250, 'Too Long!'),
-  // .required('Type something time'),
+  date: Yup.date().required('Select date'),
+  time: Yup.date().required('Select time'),
   priority: Yup.mixed().oneOf(
     Object.values(eventPriorites),
     'Invalid priority!'

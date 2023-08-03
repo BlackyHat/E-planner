@@ -74,19 +74,20 @@
   line-height: 20px;
   letter-spacing: 0em;
   text-align: center;
+  text-transform: capitalize;
 }
 .category {
   margin-right: 12px;
   color: var(--primary-color);
 }
 
-.high {
+.High {
   color: var(--high-priority-color);
 }
-.medium {
+.Medium {
   color: var(--medium-priority-color);
 }
-.low {
+.Low {
   color: var(--low-priority-color);
 }
 
@@ -97,6 +98,7 @@
   letter-spacing: 0px;
   text-align: left;
   margin-bottom: 16px;
+  text-transform: capitalize;
 }
 .description {
   font-size: 14px;
@@ -104,6 +106,7 @@
   line-height: 20px;
   letter-spacing: 0px;
   text-align: left;
+  text-transform: capitalize;
 }
 
 .moreInfoButton {

@@ -1,7 +1,7 @@
 export enum eventPriorites {
-  HIGH = 'high',
-  MEDIUM = 'medium',
-  LOW = 'low',
+  HIGH = 'High',
+  MEDIUM = 'Medium',
+  LOW = 'Low',
 }
 
 export enum STATUS {

@@ -2,14 +2,14 @@ export interface EventProps {
   data: IEvent;
 }
 export interface IEvent {
-  _id: string;
+  _id?: string;
   title: string;
   description: string;
-  date: string;
-  time: string;
+  date: Date;
+  time: Date;
   location: string;
   category: string;
   priority: string;
   imageURL?: string;
-  [key: string]: string | undefined;
+  // [key: string]: string | undefined;
 }

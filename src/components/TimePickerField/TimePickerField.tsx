@@ -3,17 +3,21 @@ import { useField, useFormikContext } from 'formik';
 import DatePicker from 'react-datepicker';
 import DatePickerInput from '../DatePickerInput/DatePickerInput';
 import './TimePickerField.module.scss';
+// import { getDate } from '../../utils/transformDate';
 export interface ITimePickerFieldProps {
   name: string;
-  initialValue?: Date;
+  initialValue?: Date | null;
 }
 
 const TimePickerField: React.FC<ITimePickerFieldProps> = ({
   name = 'time',
+  initialValue,
 }) => {
   const { setFieldValue } = useFormikContext();
   const [field] = useField(name);
-  const selectedTime = field.value ? new Date(field.value) : null;
+  const selectedTime = field.value
+    ? new Date(field.value)
+    : initialValue || null;
 
   return (
     <DatePicker

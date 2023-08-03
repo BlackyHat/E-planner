@@ -5,8 +5,8 @@ import { selectEventById } from '../../redux/events/eventSelectors';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 import splash from '../../assets/image-placeholder.svg';
-import { format } from 'date-fns';
 import { removeEvent } from '../../redux/events/eventsOperations';
+import { formatDate, formatTime } from '../../utils/transformDate';
 
 const EventCard = ({ id }: { id: string }) => {
   const event = useAppSelector(selectEventById(id));
@@ -26,7 +26,6 @@ const EventCard = ({ id }: { id: string }) => {
     priority,
     imageURL,
   } = event;
-  const formattedDate = format(new Date(date), 'dd/MM');
   const handleDelete = async () => {
     try {
       await dispatch(removeEvent(id));
@@ -54,7 +53,7 @@ const EventCard = ({ id }: { id: string }) => {
           </li>
           <li>
             <span className={scss.chip}>
-              {formattedDate} at {time}
+              {formatDate(date)} at {formatTime(time)}
             </span>
           </li>
         </ul>
@@ -62,7 +61,7 @@ const EventCard = ({ id }: { id: string }) => {
           <button
             type="button"
             className={scss.editButton}
-            onClick={() => navigate('/edit-event')}
+            onClick={() => navigate(`/edit-event/${id}`)}
           >
             Edit
           </button>

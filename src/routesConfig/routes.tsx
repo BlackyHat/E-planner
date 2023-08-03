@@ -20,7 +20,7 @@ export const routes = [
       },
 
       {
-        path: '/edit-event',
+        path: '/edit-event/:eventId',
         element: <EditEventPage />,
       },
       {

@@ -24,6 +24,10 @@
   text-transform: capitalize;
 
   padding: 16px 12px;
+  padding-right: 36px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis ' [..]';
   border-radius: 8px;
   border: 1px solid grey;
   color: var(--primary-text-color);

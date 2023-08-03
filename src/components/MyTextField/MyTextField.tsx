@@ -11,6 +11,7 @@ interface TextFieldProps {
 
 const MyTextField = ({
   label,
+  disabled,
   ...props
 }: TextFieldProps &
   InputHTMLAttributes<HTMLInputElement> &
@@ -31,10 +32,11 @@ const MyTextField = ({
             scss.input,
             meta.error && meta.touched ? scss.isInvalid : ''
           )}
+          disabled={disabled}
           {...field}
           {...props}
         />
-        {field.value && (
+        {field.value && !disabled && (
           <MdClear className={scss.clearIcon} onClick={clearInput} />
         )}
         {meta.touched && meta.error ? (
