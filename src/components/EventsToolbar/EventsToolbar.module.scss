@@ -10,31 +10,49 @@
   gap: 16px;
   box-shadow: 2px 4px 9px 0px #a68dae47;
   border: none;
-  background: #ffffff;
+  background-color: var(--primary-white-color);
   cursor: pointer;
 
-  &:hover > .buttonIcon {
-    color: #7b61ff;
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:hover > .buttonIcon,
+  &:focus > .buttonIcon {
+    color: var(--primary-color);
+    opacity: 0.8;
   }
 }
-.buttonLabel {
+
+.activeButton {
+  @extend .button;
+  background-color: var(--primary-color);
+  color: var(--primary-white-color);
+
+  &:hover > .buttonIcon,
+  &:focus > .buttonIcon {
+    color: var(--primary-white-color);
+  }
+}
+.buttonLabel,
+.activeButtonLabel {
   display: none;
   @media screen and (min-width: 768px) {
     display: inline-block;
   }
 }
-.active {
-  background-color: var(--primary-color);
-  & > .buttonIcon,
-  & > .buttonLabel {
-    color: #ffffff;
-  }
-}
+
 .buttonIcon {
   width: 24px;
   height: 24px;
-  color: inherit;
+  font-weight: 600;
 }
+
+.activeButtonIcon {
+  @extend .buttonIcon;
+}
+
 .toolbar {
   list-style: none;
   display: flex;
@@ -43,4 +61,10 @@
   gap: 24px;
   margin: 0;
   margin-bottom: 40px;
+
+  & > li {
+    display: inline-block;
+    // width: 56px;
+    // height: 56px;
+  }
 }

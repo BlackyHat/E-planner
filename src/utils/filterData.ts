@@ -2,17 +2,17 @@ import { IEvent } from '../helpers/interfaces';
 
 export const sortByCondition = (sortBy: string, filteredEvents: IEvent[]) => {
   switch (sortBy) {
-    case 'A-Z':
+    case 'byNameASC':
       return filteredEvents.sort((a, b) => a.title.localeCompare(b.title));
 
-    case 'Z-A':
+    case 'byNameDESC':
       return filteredEvents.sort((a, b) => b.title.localeCompare(a.title));
 
     case 'dateASC':
-      return filteredEvents.sort((a, b) => a.date.localeCompare(b.date));
+      return filteredEvents.sort((a, b) => a.date.getTime() - b.date.getTime());
 
     case 'dateDESC':
-      return filteredEvents.sort((a, b) => b.date.localeCompare(a.date));
+      return filteredEvents.sort((a, b) => b.date.getTime() - a.date.getTime());
 
     case 'priorityASC':
       return filteredEvents.sort((a, b) =>

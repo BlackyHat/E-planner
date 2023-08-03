@@ -25,18 +25,6 @@
   flex-direction: column;
   gap: 20px;
   width: 100%;
-  margin-bottom: 20px;
-  color: var(--primary-color);
-
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 0.4px;
-  text-align: left;
-}
-
-.label {
-  width: 100%;
   color: var(--primary-color);
 
   font-size: 16px;
@@ -47,23 +35,41 @@
 }
 
 .button {
-  padding: 16px 32px 16px 12px;
-  border-radius: 8px;
-  border: 1px solid grey;
-  color: var(--primary-color);
-  background-color: var(--primary-white-color);
-  outline: none;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0px;
-  text-align: left;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+  gap: 16px;
+  min-width: 56px;
+  height: 56px;
+  padding: 16px;
+  border-radius: 8px;
+  gap: 16px;
+  box-shadow: 2px 4px 9px 0px #a68dae47;
+  border: none;
+  background-color: var(--primary-white-color);
+  cursor: pointer;
+  @media screen and (min-width: 768px) {
+    min-width: 150px;
+    justify-content: space-evenly;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:hover > .buttonIcon,
+  &:focus > .buttonIcon {
+    color: var(--primary-color);
+    opacity: 0.8;
+  }
 }
 
 .dropdownMenu {
   position: absolute;
-  width: 100%;
+  min-width: 170px;
   background-color: var(--primary-white-color);
   color: var(--primary-text-color);
   border-radius: 12px;
@@ -78,6 +84,9 @@
   box-sizing: border-box;
   box-shadow: 2px 4px 9px 0px #a68dae47;
   max-width: 240px;
+  &.sortItme {
+    right: 0;
+  }
   @media screen and (min-width: 768px) {
     max-width: 308px;
   }
@@ -101,6 +110,14 @@
   color: var(--primary-text-color);
   padding: 16px 0;
   border-bottom: 1px solid #aca7c3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:nth-child(even) .iconArrow {
+    transform: rotate(180deg);
+  }
+
   &:hover {
     color: var(--primary-color);
   }
@@ -116,4 +133,16 @@
 }
 .openIcon {
   color: var(--primary-color);
+}
+
+.buttonLabel {
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
 }

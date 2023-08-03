@@ -86,15 +86,10 @@ const EventForm = ({ id }: { id: string }) => {
             <MySelectField
               label="Category"
               name="category"
-              type="text"
               placeholder="Choose category"
-            >
-              {Object.values(eventCategories).map((category) => (
-                <option key={category} value={category}>
-                  {category}
-                </option>
-              ))}
-            </MySelectField>
+              options={Object.values(eventCategories)}
+            />
+
             <MyTextField
               label="Add picture"
               name="imageURL"
@@ -102,18 +97,14 @@ const EventForm = ({ id }: { id: string }) => {
               disabled={true}
               placeholder="Feature in development..."
             />
+
             <MySelectField
               label="Priority"
               name="priority"
-              type="text"
               placeholder="Choose priority"
-            >
-              {Object.values(eventPriorites).map((priority) => (
-                <option key={priority} value={priority}>
-                  {priority}
-                </option>
-              ))}
-            </MySelectField>
+              options={Object.values(eventPriorites)}
+            />
+
             {isSubmitting && <span>Submitting...</span>}
 
             <button

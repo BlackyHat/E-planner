@@ -45,18 +45,20 @@ const PaginatedItems: React.FC<PaginatedItemsProps> = ({
   return (
     <>
       <EventList events={currentItems} />
-      <ReactPaginate
-        breakLabel="..."
-        nextLabel={<GrNext value={{ color: 'blue' }} className={scss.next} />}
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={pageRangeDisplayed}
-        marginPagesDisplayed={1}
-        pageCount={pageCount}
-        previousLabel={<GrPrevious className={scss.prev} />}
-        renderOnZeroPageCount={null}
-        className={scss.pagination}
-        activeLinkClassName={scss.active}
-      />
+      {items.length > itemsPerPage && (
+        <ReactPaginate
+          breakLabel="..."
+          nextLabel={<GrNext value={{ color: 'blue' }} className={scss.next} />}
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={pageRangeDisplayed}
+          marginPagesDisplayed={1}
+          pageCount={pageCount}
+          previousLabel={<GrPrevious className={scss.prev} />}
+          renderOnZeroPageCount={null}
+          className={scss.pagination}
+          activeLinkClassName={scss.active}
+        />
+      )}
     </>
   );
 };

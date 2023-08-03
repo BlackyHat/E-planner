@@ -20,3 +20,11 @@ export enum eventCategories {
   PARTY = 'Party',
   SPORT = 'Sport',
 }
+export enum sortByParams {
+  byNameASC = 'byNameASC',
+  byNameDESC = 'byNameDESC',
+  dateASC = 'dateASC',
+  dateDESC = 'dateDESC',
+  priorityASC = 'priorityASC',
+  priorityDESC = 'priorityDESC',
+}
