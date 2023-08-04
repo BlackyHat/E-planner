@@ -9,10 +9,14 @@ export const sortByCondition = (sortBy: string, filteredEvents: IEvent[]) => {
       return filteredEvents.sort((a, b) => b.title.localeCompare(a.title));
 
     case 'dateASC':
-      return filteredEvents.sort((a, b) => a.date.getTime() - b.date.getTime());
+      return filteredEvents.sort((a, b) =>
+        new Date(a.date) < new Date(b.date) ? -1 : 1
+      );
 
     case 'dateDESC':
-      return filteredEvents.sort((a, b) => b.date.getTime() - a.date.getTime());
+      return filteredEvents.sort((a, b) =>
+        new Date(a.date) > new Date(b.date) ? -1 : 1
+      );
 
     case 'priorityASC':
       return filteredEvents.sort((a, b) =>

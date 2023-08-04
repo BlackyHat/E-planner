@@ -34,7 +34,7 @@ const EventCard = ({ id }: { id: string }) => {
     try {
       await dispatch(removeEvent(id));
       navigate('/');
-      toast.success(t('notifyEvent deleted.'));
+      toast.success(t('notify.Event deleted.'));
     } catch (error) {
       toast.error(t('notify.Something went wrong. Try a bit later'));
     }
