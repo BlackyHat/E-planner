@@ -22,10 +22,14 @@ const MyTextField = ({
   const clearInput = () => {
     helpers.setValue('');
   };
-
   return (
     <>
-      <label className={scss.label}>
+      <label
+        className={clsx(
+          scss.label,
+          props.name === 'imageURL' && scss.inAActiveLabel
+        )}
+      >
         {label}
         <input
           className={clsx(

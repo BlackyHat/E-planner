@@ -1,5 +1,9 @@
 # E-planner app 📚 🖥️ 👨‍💻 📈
 
+#### Demo 🖥️ 🚀 📅 🏦
+
+### [GO TO LIVE DEMO PAGE HERE ](https://main--taupe-cascaron-c70994.netlify.app) 👀 🌀 📙
+
 Event Planner is a web application that allows users to plan and organize events.
 
 Structure:
@@ -24,8 +28,8 @@ The code is divided into separate components.
 
 ##
 
-![Main page ](assets/11.png) ![Create page ](assets/22.png)
-![Event page ](assets/33.png)
+![Main page ](assets/11.png) ![Edit page ](assets/22.png)
+![Event page ](assets/33.png) ![Create page ](assets/44.png)
 
 ##
 
@@ -63,12 +67,6 @@ Copy the repository to yourself
 ```shell
 git clone https://github.com/BlackyHat/E-planner.git
 ```
-
-##### Demo 🖥️ 🚀 📅 🏦
-
-### [GO TO LIVE DEMO PAGE HERE ]() 👀 🌀 📙
-
-![Main page ]()
 
 ## The web application using the following technologies and libraries: ⚙️ 🚧 🖥️
 
