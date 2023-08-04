@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import { eventCategories, sortByParams } from '../../helpers/enums';
 import FilterDropdown from '../FilterDropdown/FilterDropdown';
@@ -7,30 +8,23 @@ import scss from './EventsToolbar.module.scss';
 
 const EventsToolbar = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
+
   return (
     <>
       <ul className={scss.toolbar}>
         <li>
           <FilterDropdown
             options={Object.values(eventCategories)}
-            title={'Categories'}
+            title={t('Categories')}
           />
         </li>
         <li>
           <FilterDropdown
             options={Object.values(sortByParams)}
             isSortBy={true}
-            title={'SortBy'}
+            title={t('SortBy')}
           />
-          {/* <button
-            type="button"
-            className={scss.button}
-            onClick={() => {}}
-            title="Sort by"
-          >
-            <img src={sortByicon} className={scss.buttonIcon} />
-            <span className={scss.buttonLabel}>Sort by</span>
-          </button> */}
         </li>
         <li>
           <button
@@ -39,10 +33,10 @@ const EventsToolbar = () => {
             onClick={() => {
               navigate('/create-event');
             }}
-            title="Add new event"
+            title={t('Add new event')}
           >
             <VscAdd className={scss.activeButtonIcon} />
-            <span className={scss.activeButtonLabel}>Add new event</span>
+            <span className={scss.activeButtonLabel}>{t('Add new event')}</span>
           </button>
         </li>
       </ul>

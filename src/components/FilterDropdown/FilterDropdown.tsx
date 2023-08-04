@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { useState } from 'react';
+
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import {
   selectCategoryFilter,

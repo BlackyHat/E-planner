@@ -91,12 +91,6 @@
   box-sizing: border-box;
   box-shadow: 2px 4px 9px 0px #a68dae47;
   max-width: 68px;
-  // @media screen and (min-width: 768px) {
-  //   max-width: 308px;
-  // }
-  // @media screen and (min-width: 768px) {
-  //   max-width: 372px;
-  // }
   &.active {
     display: block;
     z-index: 130;
@@ -129,4 +123,8 @@
 }
 .openIcon {
   color: var(--primary-color);
+}
+
+.label {
+  text-transform: uppercase;
 }

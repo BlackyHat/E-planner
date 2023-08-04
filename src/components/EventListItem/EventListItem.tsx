@@ -1,12 +1,16 @@
-import scss from './EventListItem.module.scss';
-import clsx from 'clsx';
 import { useNavigate } from 'react-router-dom';
+import { formatDate, formatTime } from '../../utils/transformDate';
+import { useTranslation } from 'react-i18next';
+import clsx from 'clsx';
+
 import { EventProps } from '../../helpers/interfaces';
 import splash from '../../assets/image-placeholder.svg';
-import { formatDate, formatTime } from '../../utils/transformDate';
+import scss from './EventListItem.module.scss';
 
 const EventListItem: React.FC<EventProps> = ({ data }) => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
+
   const {
     _id,
     title,
@@ -40,7 +44,7 @@ const EventListItem: React.FC<EventProps> = ({ data }) => {
         </div>
         <div className={scss.cardLabel}>
           <span className={scss.dateLabel}>
-            {formatDate(date)} at {formatTime(time)}
+            {formatDate(date)} {t('at')} {formatTime(time)}
           </span>
           <span className={scss.location}>{location}</span>
         </div>
@@ -54,7 +58,7 @@ const EventListItem: React.FC<EventProps> = ({ data }) => {
         className={scss.moreInfoButton}
         onClick={handleMoreInfo}
       >
-        More info
+        {t('More info')}
       </button>
     </li>
   );

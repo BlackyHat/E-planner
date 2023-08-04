@@ -11,10 +11,12 @@ import { eventCategories, eventPriorites } from '../../helpers/enums';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { addEvent, updateEvent } from '../../redux/events/eventsOperations';
 import { selectEventById } from '../../redux/events/eventSelectors';
+import { useTranslation } from 'react-i18next';
 
 const EventForm = ({ id }: { id: string }) => {
   const eventData = useAppSelector(selectEventById(id));
   const dispatch = useAppDispatch();
+  const { t } = useTranslation();
 
   const getInitData = () => {
     const initValues = {
@@ -48,22 +50,22 @@ const EventForm = ({ id }: { id: string }) => {
             await dispatch(updateEvent({ eventId: id, newEvent: values }));
             // toast.success('Success. The event updated!');
             toast.promise(dispatch(addEvent(values)), {
-              loading: 'Saving...',
-              success: <b>Success. The event updated!</b>,
-              error: <b>Could not update event.</b>,
+              loading: t('notify.Saving...'),
+              success: <b>t('notify.Success. The event updated!')</b>,
+              error: <b>t('notify.Could not update event.')</b>,
             });
           }
 
           if (!eventData && values.date) {
             // toast.success('Success. The new event added!');
             toast.promise(dispatch(addEvent(values)), {
-              loading: 'Saving...',
-              success: <b>The new event added!</b>,
-              error: <b>Could not create.</b>,
+              loading: t('notify.Saving...'),
+              success: <b>t('notify.The new event added!')</b>,
+              error: <b>t('notify.Could not create.')</b>,
             });
           }
         } catch (error) {
-          toast.error('Sorry.Something went wrong.');
+          toast.error(t('notify.Sorry.Something went wrong.'));
         }
       }}
     >
@@ -71,58 +73,55 @@ const EventForm = ({ id }: { id: string }) => {
         return (
           <Form className={scss.formContainer}>
             <MyTextField
-              label="Title"
+              label={t('form.Title')}
               name="title"
               type="text"
-              placeholder="Type some title..."
+              placeholder={t('form.titlePlaceholder')}
             />
             <MyTextareaField
-              label="Description"
+              label={t('form.Description')}
               name="description"
               type="text"
-              placeholder="Type some description..."
+              placeholder={t('form.descriptionPlaceholder')}
               component="textarea"
               rows={5}
             />
             <DatePickerField name="date" />
             <TimePickerField name="time" />
             <MyTextField
-              label="Location"
+              label={t('form.Location')}
               name="location"
               type="text"
-              placeholder="Type some location..."
+              placeholder={t('form.locationPlaceholder')}
             />
             <MySelectField
-              label="Category"
+              label={t('form.Category')}
               name="category"
-              placeholder="Choose category"
+              placeholder={t('form.categoryPlaceholder')}
               options={Object.values(eventCategories)}
             />
 
             <MyTextField
-              label="Add picture"
+              label={t('form.Add picture')}
               name="imageURL"
               type="text"
               disabled={true}
-              placeholder="Feature in development..."
+              placeholder={t('form.imagePlaceholder')}
             />
 
             <MySelectField
-              label="Priority"
+              label={t('form.Priority')}
               name="priority"
-              placeholder="Choose priority"
+              placeholder={t('form.priorityPlaceholder')}
               options={Object.values(eventPriorites)}
             />
-
-            {isSubmitting && <span>Submitting...</span>}
-
             <button
               type="submit"
               className={scss.submitButton}
               disabled={isSubmitting || !isValid || !dirty}
               onClick={submitForm}
             >
-              {!eventData ? 'Add event' : 'Save'}
+              {!eventData ? t('form.Add event') : t('form.Save')}
             </button>
           </Form>
         );

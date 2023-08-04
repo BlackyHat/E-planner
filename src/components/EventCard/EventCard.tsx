@@ -1,17 +1,21 @@
-import { clsx } from 'clsx';
-import scss from './EventCard.module.scss';
-import { useAppDispatch, useAppSelector } from '../../redux/hooks';
-import { selectEventById } from '../../redux/events/eventSelectors';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-hot-toast';
-import splash from '../../assets/image-placeholder.svg';
+import { useTranslation } from 'react-i18next';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { removeEvent } from '../../redux/events/eventsOperations';
+import { selectEventById } from '../../redux/events/eventSelectors';
 import { formatDate, formatTime } from '../../utils/transformDate';
+import { toast } from 'react-hot-toast';
+import { clsx } from 'clsx';
+
+import splash from '../../assets/image-placeholder.svg';
+import scss from './EventCard.module.scss';
 
 const EventCard = ({ id }: { id: string }) => {
   const event = useAppSelector(selectEventById(id));
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const { t } = useTranslation();
+
   if (!event) {
     return null;
   }
@@ -30,9 +34,9 @@ const EventCard = ({ id }: { id: string }) => {
     try {
       await dispatch(removeEvent(id));
       navigate('/');
-      toast.success('Event deleted.');
+      toast.success(t('notifyEvent deleted.'));
     } catch (error) {
-      toast.error('Something went wrong. Try a bit later');
+      toast.error(t('notify.Something went wrong. Try a bit later'));
     }
   };
   return (
@@ -53,7 +57,7 @@ const EventCard = ({ id }: { id: string }) => {
           </li>
           <li>
             <span className={scss.chip}>
-              {formatDate(date)} at {formatTime(time)}
+              {formatDate(date)} {t('at')} {formatTime(time)}
             </span>
           </li>
         </ul>
@@ -63,14 +67,14 @@ const EventCard = ({ id }: { id: string }) => {
             className={scss.editButton}
             onClick={() => navigate(`/edit-event/${id}`)}
           >
-            Edit
+            {t('Edit')}
           </button>
           <button
             type="button"
             className={scss.deleteButton}
             onClick={handleDelete}
           >
-            Delete event
+            {t('Delete event')}
           </button>
         </ul>
       </div>

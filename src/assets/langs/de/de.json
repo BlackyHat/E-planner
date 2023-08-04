@@ -1,0 +1,39 @@
+{
+  "form": {
+    "titlePlaceholder": "Geben Sie einen Titel ein...",
+    "descriptionPlaceholder": "Geben Sie eine Beschreibung ein...",
+    "locationPlaceholder": "Geben Sie einen Ort ein...",
+    "categoryPlaceholder": "Kategorie auswählen",
+    "imagePlaceholder": "Funktion in Entwicklung...",
+    "priorityPlaceholder": "Priorität auswählen",
+    "Title": "Titel",
+    "Description": "Beschreibung",
+    "Location": "Ort",
+    "Category": "Kategorie",
+    "Add picture": "Bild hinzufügen",
+    "Priority": "Priorität",
+    "Add event": "Ereignis hinzufügen",
+    "Save": "Speichern"
+  },
+  "notify": {
+    "Success. The event updated!": "Erfolg. Das Ereignis wurde aktualisiert!",
+    "Could not update event.": "Ereignis konnte nicht aktualisiert werden.",
+    "The new event added!": "Das neue Ereignis wurde hinzugefügt!",
+    "Could not create.": "Konnte nicht erstellt werden.",
+    "Sorry.Something went wrong.": "Entschuldigung. Etwas ist schief gelaufen.",
+    "Saving...": "Speichern...",
+    "Event deleted.": "Ereignis gelöscht.",
+    "Something went wrong. Try a bit later": "Etwas ist schief gelaufen. Bitte versuchen Sie es später erneut."
+  },
+  "Event Planner": "Eventplaner",
+  "Go back": "Zurück",
+  "Cancel": "Abbrechen",
+  "Choose day": "Tag auswählen",
+  "at": "um",
+  "More info": "Weitere Informationen",
+  "Edit": "Bearbeiten",
+  "Delete event": "Ereignis löschen",
+  "Add new event": "Neues Ereignis hinzufügen",
+  "Categories": "Kategorien",
+  "SortBy": "Sortieren"
+}

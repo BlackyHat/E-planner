@@ -1,0 +1,39 @@
+{
+  "form": {
+    "titlePlaceholder": "Inserisci un titolo...",
+    "descriptionPlaceholder": "Inserisci una descrizione...",
+    "locationPlaceholder": "Inserisci una posizione...",
+    "categoryPlaceholder": "Scegli una categoria",
+    "imagePlaceholder": "Funzionalità in fase di sviluppo...",
+    "priorityPlaceholder": "Scegli una priorità",
+    "Title": "Titolo",
+    "Description": "Descrizione",
+    "Location": "Posizione",
+    "Category": "Categoria",
+    "Add picture": "Aggiungi immagine",
+    "Priority": "Priorità",
+    "Add event": "Aggiungi evento",
+    "Save": "Salva"
+  },
+  "notify": {
+    "Success. The event updated!": "Successo. L'evento è stato aggiornato!",
+    "Could not update event.": "Impossibile aggiornare l'evento.",
+    "The new event added!": "Il nuovo evento è stato aggiunto!",
+    "Could not create.": "Impossibile creare.",
+    "Sorry.Something went wrong.": "Spiacenti. Qualcosa è andato storto.",
+    "Saving...": "Salvataggio...",
+    "Event deleted.": "Evento eliminato.",
+    "Something went wrong. Try a bit later": "Qualcosa è andato storto. Riprova più tardi"
+  },
+  "Event Planner": "Pianificatore Eventi",
+  "Go back": "Torna indietro",
+  "Cancel": "Annulla",
+  "Choose day": "Scegli il giorno",
+  "at": "alle",
+  "More info": "Maggiori informazioni",
+  "Edit": "Modifica",
+  "Delete event": "Elimina evento",
+  "Add new event": "Aggiungi nuovo evento",
+  "Categories": "Categorie",
+  "SortBy": "Ordina"
+}

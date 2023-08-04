@@ -1,0 +1,40 @@
+{
+  "form": {
+    "titlePlaceholder": "Type some title...",
+    "descriptionPlaceholder": "Type some description...",
+    "locationPlaceholder": "Type some location..",
+    "categoryPlaceholder": "Choose category",
+    "imagePlaceholder": "Feature in development...",
+    "priorityPlaceholder": "Choose priority",
+    "Title": "Title",
+    "Description": "Description",
+    "Location": "Location",
+    "Category": "Category",
+    "Add picture": "Add picture",
+    "Priority": "Priority",
+    "Add event": "Add event",
+    "Save": "Save"
+  },
+  "notify": {
+    "Success. The event updated!": "Success. The event updated!",
+    "Could not update event.": "Could not update event.",
+    "The new event added!": "The new event added!",
+    "Could not create.": "Could not create.",
+    "Sorry.Something went wrong.": "Sorry.Something went wrong.",
+    "Saving...": "Saving...",
+    "Event deleted.": "Event deleted.",
+    "Something went wrong. Try a bit later": "Something went wrong. Try a bit later"
+  },
+
+  "Event Planner": "Event Planner",
+  "Go back": "Go back",
+  "Cancel": "Cancel",
+  "Choose day": "Choose day",
+  "at": "at",
+  "More info": "More info",
+  "Edit": "Edit",
+  "Delete event": "Delete event",
+  "Add new event": "Add new event",
+  "Categories": "Categories",
+  "SortBy": "SortBy"
+}

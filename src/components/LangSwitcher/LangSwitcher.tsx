@@ -3,18 +3,20 @@ import scss from './LangSwitcher.module.scss';
 import { useState } from 'react';
 import { BsChevronCompactDown } from 'react-icons/bs';
 import { toast } from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
 
 const LangSwitcher = () => {
   const [open, setOpen] = useState(false);
-  const [lang, setLang] = useState('UK');
-  const implementLangSupport = ['UK', 'UA', 'IT'];
+  const langsToTranslate = ['en', 'de', 'it'];
 
   const handleOptionChange = (option: string) => {
-    setLang(option);
-    toast.success('This feature in development.');
-    // toast.success('Language was changed.');
+    i18n.changeLanguage(option);
+    toast.success('Language was changed.');
     setOpen(!open);
   };
+  const { i18n } = useTranslation();
+  const lang = i18n.language;
+
   return (
     <div className={scss.container}>
       <div
@@ -27,7 +29,7 @@ const LangSwitcher = () => {
           onClick={() => setOpen(!open)}
           type="button"
         >
-          {lang}
+          <span className={scss.label}> {lang}</span>
           <span className={scss.openIconWrapper} onClick={() => setOpen(!open)}>
             <BsChevronCompactDown className={scss.openIcon} />
           </span>
@@ -36,16 +38,18 @@ const LangSwitcher = () => {
         <ul
           className={clsx(scss.dropdownMenu, open ? scss.active : scss.closed)}
         >
-          {implementLangSupport.map((option) => (
-            <li
-              key={option}
-              className={scss.dropdownItem}
-              onClick={() => handleOptionChange(option)}
-              value={option}
-            >
-              {option}
-            </li>
-          ))}
+          {langsToTranslate
+            .filter((option) => option !== lang)
+            .map((option) => (
+              <li
+                key={option}
+                className={scss.dropdownItem}
+                onClick={() => handleOptionChange(option)}
+                value={option}
+              >
+                <span className={scss.label}> {option}</span>
+              </li>
+            ))}
         </ul>
       </div>
     </div>
