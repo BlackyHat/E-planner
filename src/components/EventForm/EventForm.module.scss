@@ -37,7 +37,7 @@
       grid-row-start: 4;
     }
   }
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1280px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 0 42px;
@@ -96,7 +96,7 @@
     max-width: 194px;
     margin-top: 40px;
   }
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1280px) {
     grid-column-start: 3;
     margin-top: 60px;
   }

@@ -1,27 +1,121 @@
-# React + TypeScript + Vite
+# E-planner app 📚 🖥️ 👨‍💻 📈
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Event Planner is a web application that allows users to plan and organize events.
 
-Currently, two official plugins are available:
+Structure:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Home page - a list of upcoming events with basic information about them. The ability to filter events by category. Events with different priorities are displayed in different colors.
+Event creation page - a form for filling in the necessary information about the event (name, date, time, place, description, etc.).
+Event page - detailed information about a specific event, including all the information filled in from the event creation page.
+Event edit page - you can edit the completed form with information about the event, such as name, date, time, place, description, etc.
 
-## Expanding the ESLint configuration
+Features:
+Sort events - sort events by different categories, by name, date, or priority.
+Search for an event - search for an event by name or description using the inpt in the header.
+Pagination on the main page.
+Support for different languages.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The layout is fixed in px.
+Layout is semantic and valid, accessibility will be a bonus (a11y).
+Adaptive and cross-browser layout - mobile from 320px, tablet from 768px, desktop from 1280px.
+Use the Mobile first approach.
+The code should be clean, with formatting preserved. We recommend using ESLint/Prettier.
+The code is divided into separate components.
 
-- Configure the top-level `parserOptions` property like this:
+<table width="100%">
+  <tr>
+    <td align="center" valign="middle" width="20%">
+      <a href="https://react.dev/">
+        <img height="80" width="80" alt="React" src="assets/react_logo.png"/>
+      </a>
+      <br />
+      React
+    </td>
+    <td align="center" valign="middle" width="20%">
+      <a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-262/">
+        <img height="80" width="80" alt="JavaScript" src="assets/js_logo.png"/>
+      </a>
+      <br />
+      JavaScript
+    </td>
+    <td align="center" valign="middle" width="20%">
+      <a href="https://www.typescriptlang.org/">
+        <img height="80" width="80" alt="TypeScript" src="assets/ts_logo.png"/>
+      </a>
+      <br />
+      TypeScript
+    </td>
+    <td align="center" valign="middle" width="20%">
+      <a href="https://vitejs.dev/">
+        <img height="80" width="80" alt="Vite" src="assets/vite_logo.png"/>
+      </a>
+      <br />
+      Vite
+    </td>
+  </tr>
+</table>
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+## Installation and Usage ⚙️ 🚀 📅 💻
+
+To get start application, follow these steps:
+
+1.  Clone this repository to your local machine.
+2.  Open the terminal and navigate to the project directory.
+3.  Run the following commands:
+
+```
+# yarn package manager
+yarn install
+yarn start
+
+# npm package manager
+npm install
+npm run start
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Copy the repository to yourself
+
+```shell
+git clone https://github.com/BlackyHat/E-planner.git
+```
+
+##### Demo 🖥️ 🚀 📅 🏦
+
+### [GO TO LIVE DEMO PAGE HERE ]() 👀 🌀 📙
+
+![Main page ]()
+
+## The web application using the following technologies and libraries: ⚙️ 🚧 🖥️
+
+- JavaScript,
+- TypeScript,
+- React.js,
+- Redux Toolkit,
+- React Router Dom,
+- Formik,
+- Yup,
+- React Date Picker,
+- React Hot Toast,
+- React Icons,
+- Axios,
+- SASS,
+
+## Stay in touch 🤠 💼 🕔 🏁
+
+- Author - [Oleksandr Podoliako](https://github.com/BlackyHat)
+- Linkedin - [http://linkedin.com/in/oleksandr-vp](http://linkedin.com/in/oleksandr-vp)
+- Telegram - [@blackhatty](https://t.me/blackhatty)
+
+## Badges
+
+| <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" /> | `https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white` |
+
+![image]({https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white})
+![image]({https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E})
+![image]({https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB})
+![image]({https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white})
+![image]({BadgeURhttps://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=whiteLHere})
+![image]({https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E})
+![image]({https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white})
+![image]({https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white})
+![image]({https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white})

@@ -17,9 +17,15 @@
     @media screen and (min-width: 768px) {
       width: 308px;
     }
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 1280px) {
       width: 372px;
     }
+  }
+
+  &__tab-loop {
+    position: absolute;
+    top: 0;
+    left: 0;
   }
   &__time-box {
     box-sizing: content-box;
@@ -47,7 +53,7 @@
     @media screen and (min-width: 768px) {
       width: 308px;
     }
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 1280px) {
       width: 372px;
     }
   }
