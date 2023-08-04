@@ -30,17 +30,12 @@ export const sortByCondition = (sortBy: string, filteredEvents: IEvent[]) => {
 };
 
 export const filterByKey = (filter: string, filteredEvents: IEvent[]) => {
-  return filteredEvents.filter((event) => {
+  return filteredEvents.filter(({ title, description }) => {
     const normalizedFilter = filter.toLowerCase();
-    for (const key in event) {
-      if (typeof event[key] === 'string') {
-        const value = event[key] as string;
-        if (value.toLowerCase().includes(normalizedFilter)) {
-          return true;
-        }
-      }
-    }
-    return false;
+    const isInclude =
+      title.includes(normalizedFilter) ||
+      description.includes(normalizedFilter);
+    return isInclude;
   });
 };
 

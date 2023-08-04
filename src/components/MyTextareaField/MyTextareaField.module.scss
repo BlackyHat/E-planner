@@ -29,6 +29,7 @@
   background-repeat: no-repeat;
   background-position: top right;
   background-size: 32px 32px;
+  resize: none;
   &::placeholder {
     color: var(--primary-color);
   }

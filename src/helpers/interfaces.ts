@@ -11,5 +11,4 @@ export interface IEvent {
   category: string;
   priority: string;
   imageURL?: string;
-  // [key: string]: string | undefined;
 }

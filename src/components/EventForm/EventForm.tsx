@@ -12,9 +12,11 @@ import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { addEvent, updateEvent } from '../../redux/events/eventsOperations';
 import { selectEventById } from '../../redux/events/eventSelectors';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
-const EventForm = ({ id }: { id: string }) => {
-  const eventData = useAppSelector(selectEventById(id));
+const EventForm = ({ id }: { id?: string }) => {
+  const eventData = id ? useAppSelector(selectEventById(id)) : null;
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
 
@@ -47,25 +49,22 @@ const EventForm = ({ id }: { id: string }) => {
       onSubmit={async (values) => {
         try {
           if (eventData && id && values.date) {
-            await dispatch(updateEvent({ eventId: id, newEvent: values }));
-            // toast.success('Success. The event updated!');
-            toast.promise(dispatch(addEvent(values)), {
-              loading: t('notify.Saving...'),
-              success: <b>t('notify.Success. The event updated!')</b>,
-              error: <b>t('notify.Could not update event.')</b>,
-            });
+            await dispatch(updateEvent({ eventId: id, newEvent: values })),
+              toast.success(t('notify.Success. The event updated!'));
+            navigate(-1);
           }
 
           if (!eventData && values.date) {
-            // toast.success('Success. The new event added!');
             toast.promise(dispatch(addEvent(values)), {
               loading: t('notify.Saving...'),
-              success: <b>t('notify.The new event added!')</b>,
-              error: <b>t('notify.Could not create.')</b>,
+              success: t('notify.The new event added!'),
+              error: t('notify.Could not create.'),
             });
+            navigate('/');
           }
         } catch (error) {
           toast.error(t('notify.Sorry.Something went wrong.'));
+          navigate('/');
         }
       }}
     >

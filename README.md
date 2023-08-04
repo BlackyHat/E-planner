@@ -22,38 +22,23 @@ Use the Mobile first approach.
 The code should be clean, with formatting preserved. We recommend using ESLint/Prettier.
 The code is divided into separate components.
 
-<table width="100%">
-  <tr>
-    <td align="center" valign="middle" width="20%">
-      <a href="https://react.dev/">
-        <img height="80" width="80" alt="React" src="assets/react_logo.png"/>
-      </a>
-      <br />
-      React
-    </td>
-    <td align="center" valign="middle" width="20%">
-      <a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-262/">
-        <img height="80" width="80" alt="JavaScript" src="assets/js_logo.png"/>
-      </a>
-      <br />
-      JavaScript
-    </td>
-    <td align="center" valign="middle" width="20%">
-      <a href="https://www.typescriptlang.org/">
-        <img height="80" width="80" alt="TypeScript" src="assets/ts_logo.png"/>
-      </a>
-      <br />
-      TypeScript
-    </td>
-    <td align="center" valign="middle" width="20%">
-      <a href="https://vitejs.dev/">
-        <img height="80" width="80" alt="Vite" src="assets/vite_logo.png"/>
-      </a>
-      <br />
-      Vite
-    </td>
-  </tr>
-</table>
+##
+
+![Main page ](assets/11.png) ![Create page ](assets/22.png)
+![Event page ](assets/33.png)
+
+##
+
+![image](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![image](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![image](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![image](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=whiteLHere)
+![image](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
+![image](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![image](https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![image](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![image](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
 
 ## Installation and Usage ⚙️ 🚀 📅 💻
 
@@ -98,23 +83,10 @@ git clone https://github.com/BlackyHat/E-planner.git
 - React Hot Toast,
 - React Icons,
 - Axios,
-- SASS,
+- SASS
 
 ## Stay in touch 🤠 💼 🕔 🏁
 
 - Author - [Oleksandr Podoliako](https://github.com/BlackyHat)
 - Linkedin - [http://linkedin.com/in/oleksandr-vp](http://linkedin.com/in/oleksandr-vp)
 - Telegram - [@blackhatty](https://t.me/blackhatty)
-
-##
-
-![image](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![image](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
-![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![image](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
-![image](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=whiteLHere)
-![image](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
-![image](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
-![image](https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![image](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
-![image](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
