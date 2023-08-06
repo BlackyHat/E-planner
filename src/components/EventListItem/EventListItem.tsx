@@ -37,9 +37,9 @@ const EventListItem: React.FC<EventProps> = ({ data }) => {
         style={{ backgroundImage: `url(${imageURL || splash})` }}
       >
         <div className={scss.badges}>
-          <span className={scss.category}>{category}</span>
+          <span className={scss.category}>{t(category)}</span>
           <span className={clsx(scss.priority, scss[priority])}>
-            {priority}
+            {t(priority)}
           </span>
         </div>
         <div className={scss.cardLabel}>

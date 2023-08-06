@@ -35,5 +35,21 @@
   "Delete event": "Elimina evento",
   "Add new event": "Aggiungi nuovo evento",
   "Categories": "Categorie",
-  "SortBy": "Ordina"
+  "SortBy": "Ordina",
+  "Art": "Arte",
+  "Music": "Musica",
+  "Business": "Affari",
+  "Conference": "Conferenza",
+  "Workshop": "Laboratorio",
+  "Party": "Festa",
+  "Sport": "Sport",
+  "byNameASC": "A-Z",
+  "byNameDESC": "Z-A",
+  "dateASC": "data",
+  "dateDESC": "data",
+  "priorityASC": "priorità",
+  "priorityDESC": "priorità",
+  "High": "Alto",
+  "Medium": "Medio",
+  "Low": "Basso"
 }

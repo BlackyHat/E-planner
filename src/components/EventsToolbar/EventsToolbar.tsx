@@ -9,7 +9,6 @@ import scss from './EventsToolbar.module.scss';
 const EventsToolbar = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
-
   return (
     <>
       <ul className={scss.toolbar}>

@@ -113,7 +113,7 @@
   margin: 0;
 
   @media screen and (min-width: 768px) {
-    max-width: 182px;
+    max-width: 220px;
     align-self: flex-end;
     gap: 16px;
   }
@@ -146,7 +146,7 @@
   color: var(--primary-color);
 
   @media screen and (min-width: 768px) {
-    width: 55px;
+    min-width: 55px;
   }
 }
 
@@ -155,6 +155,7 @@
   color: var(--primary-white-color);
   border: none;
   @media screen and (min-width: 768px) {
-    width: 108px;
+    min-width: 108px;
+    white-space: nowrap;
   }
 }

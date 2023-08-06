@@ -121,6 +121,10 @@
   &:hover {
     color: var(--primary-color);
   }
+
+  & > span {
+    white-space: nowrap;
+  }
 }
 
 .openIconWrapper {

@@ -47,10 +47,12 @@ const EventCard = ({ id }: { id: string }) => {
         <p className={scss.description}>{description}</p>
         <ul className={scss.badges}>
           <li>
-            <span className={scss.chip}>{category}</span>
+            <span className={scss.chip}>{t(category)}</span>
           </li>
           <li>
-            <span className={clsx(scss.chip, scss[priority])}>{priority}</span>
+            <span className={clsx(scss.chip, scss[priority])}>
+              {t(priority)}
+            </span>
           </li>
           <li>
             <span className={scss.chip}>{location}</span>

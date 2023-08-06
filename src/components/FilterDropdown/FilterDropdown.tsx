@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import {
@@ -26,6 +27,7 @@ const FilterDropdown: React.FC<DropdownProps> = ({
 }) => {
   const [open, setOpen] = useState(false);
   const dispatch = useAppDispatch();
+  const { t } = useTranslation();
 
   const handleOptionChange = (option: string) => {
     if (isSortBy) {
@@ -59,7 +61,9 @@ const FilterDropdown: React.FC<DropdownProps> = ({
             src={isSortBy ? sortByicon : filter}
             className={scss.buttonIcon}
           />
-          <span className={scss.buttonLabel}>{getValue() || title}</span>
+          <span className={scss.buttonLabel}>
+            {isSortBy && t('Sort by')} {t(getValue() || title)}
+          </span>
         </button>
 
         <ul
@@ -76,7 +80,9 @@ const FilterDropdown: React.FC<DropdownProps> = ({
               onClick={() => handleOptionChange(option)}
               value={option}
             >
-              <span> {option}</span>
+              <span>
+                {isSortBy && t('Sort by')} {t(option)}
+              </span>
               {isSortBy && <img src={arrow} className={scss.iconArrow} />}
             </li>
           ))}
