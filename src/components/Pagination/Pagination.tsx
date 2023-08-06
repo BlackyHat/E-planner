@@ -14,20 +14,15 @@ interface PaginatedItemsProps {
 }
 
 const PaginatedItems: React.FC<PaginatedItemsProps> = ({
-  itemsPerPage = 3,
+  itemsPerPage = 4,
 }) => {
   const items = useAppSelector(selectFilteredEvents);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [_, setSearchParams] = useSearchParams();
   const [itemOffset, setItemOffset] = useState(0);
 
   useEffect(() => {
-    const page = searchParams.get('page');
-    if (page && Number(page) > 0) {
-      setItemOffset(Number(page) - 1);
-    }
-  }, []);
-  useEffect(() => {
-    setSearchParams({ page: (itemOffset + 1).toString() });
+    const pageNumber = Math.ceil((itemOffset + itemsPerPage) / itemsPerPage);
+    setSearchParams({ page: pageNumber.toString() });
   }, [itemOffset]);
 
   const isTabletOrMobile = useMediaQuery({ query: '(min-width: 768px)' });
