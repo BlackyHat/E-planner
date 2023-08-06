@@ -61,9 +61,7 @@ const FilterDropdown: React.FC<DropdownProps> = ({
             src={isSortBy ? sortByicon : filter}
             className={scss.buttonIcon}
           />
-          <span className={scss.buttonLabel}>
-            {isSortBy && t('Sort by')} {t(getValue() || title)}
-          </span>
+          <span className={scss.buttonLabel}>{t(getValue() || t(title))}</span>
         </button>
 
         <ul
@@ -80,9 +78,7 @@ const FilterDropdown: React.FC<DropdownProps> = ({
               onClick={() => handleOptionChange(option)}
               value={option}
             >
-              <span>
-                {isSortBy && t('Sort by')} {t(option)}
-              </span>
+              <span>{t(option)}</span>
               {isSortBy && <img src={arrow} className={scss.iconArrow} />}
             </li>
           ))}

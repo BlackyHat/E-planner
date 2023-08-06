@@ -22,7 +22,7 @@ const EventsToolbar = () => {
           <FilterDropdown
             options={Object.values(sortByParams)}
             isSortBy={true}
-            title={t('SortBy')}
+            title={t('Sort by')}
           />
         </li>
         <li>
