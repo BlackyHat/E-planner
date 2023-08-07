@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { selectFilter } from '../../redux/events/eventSelectors';
@@ -11,6 +12,8 @@ import { useSearchParams } from 'react-router-dom';
 
 const Filter = () => {
   const [_, setSearchParams] = useSearchParams();
+  const { t } = useTranslation();
+
   const dispatch = useAppDispatch();
   const filter = useAppSelector(selectFilter);
 
@@ -32,7 +35,7 @@ const Filter = () => {
         name="filter"
         onChange={handleFilter}
         className={scss.input}
-        placeholder="Search by keywords"
+        placeholder={t('form.Search by keywords')}
       />
       <img src={search} className={scss.buttonIcon} />
       {filter && <MdClear className={scss.clearIcon} onClick={clearInput} />}

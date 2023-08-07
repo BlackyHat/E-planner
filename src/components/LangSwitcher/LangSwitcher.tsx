@@ -1,9 +1,10 @@
-import clsx from 'clsx';
-import scss from './LangSwitcher.module.scss';
 import { useState } from 'react';
-import { BsChevronCompactDown } from 'react-icons/bs';
-import { toast } from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
+import { toast } from 'react-hot-toast';
+import clsx from 'clsx';
+
+import { BsChevronCompactDown } from 'react-icons/bs';
+import scss from './LangSwitcher.module.scss';
 
 const LangSwitcher = () => {
   const [open, setOpen] = useState(false);
@@ -11,10 +12,10 @@ const LangSwitcher = () => {
 
   const handleOptionChange = (option: string) => {
     i18n.changeLanguage(option);
-    toast.success('Language was changed.');
+    toast.success(t('notify.Language was changed.'));
     setOpen(!open);
   };
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const lang = i18n.language;
 
   return (

@@ -13,7 +13,8 @@
     "Add picture": "Aggiungi immagine",
     "Priority": "Priorità",
     "Add event": "Aggiungi evento",
-    "Save": "Salva"
+    "Save": "Salva",
+    "Search by keywords": "Ricerca per parole chiave"
   },
   "notify": {
     "Success. The event updated!": "Successo. L'evento è stato aggiornato!",
@@ -23,9 +24,11 @@
     "Sorry.Something went wrong.": "Spiacenti. Qualcosa è andato storto.",
     "Saving...": "Salvataggio...",
     "Event deleted.": "Evento eliminato.",
-    "Something went wrong. Try a bit later": "Qualcosa è andato storto. Riprova più tardi"
+    "Something went wrong. Try a bit later": "Qualcosa è andato storto. Riprova più tardi",
+    "No data. Something went wrong.": "Nessun dato. Qualcosa è andato storto.",
+    "Language was changed.": "La lingua è stata cambiata."
   },
-  "Event Planner": "Pianificatore Eventi",
+  "Event Planner": "Pianificatore",
   "Go back": "Torna indietro",
   "Cancel": "Annulla",
   "Choose day": "Scegli il giorno",
@@ -51,5 +54,9 @@
   "priorityDESC": "Ordina priorità",
   "High": "Alto",
   "Medium": "Medio",
-  "Low": "Basso"
+  "Low": "Basso",
+  "Select time": "Seleziona l'ora",
+  "Select date": "Seleziona la data",
+  "Create new event": "Crea nuovo evento",
+  "Edit event": "Modifica evento"
 }

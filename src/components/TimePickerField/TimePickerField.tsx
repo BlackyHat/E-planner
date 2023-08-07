@@ -1,8 +1,9 @@
 import React from 'react';
 import { useField, useFormikContext } from 'formik';
+import { useTranslation } from 'react-i18next';
 import DatePicker from 'react-datepicker';
-import DatePickerInput from '../DatePickerInput/DatePickerInput';
 
+import DatePickerInput from '../DatePickerInput/DatePickerInput';
 import scss from './TimePickerField.module.scss';
 
 export interface ITimePickerFieldProps {
@@ -14,6 +15,8 @@ const TimePickerField: React.FC<ITimePickerFieldProps> = ({
   name = 'time',
   initialValue,
 }) => {
+  const { t } = useTranslation();
+
   const { setFieldValue } = useFormikContext();
   const [field] = useField(name);
   const selectedTime = field.value
@@ -29,7 +32,7 @@ const TimePickerField: React.FC<ITimePickerFieldProps> = ({
         showTimeSelectOnly
         timeIntervals={15}
         dateFormat="hh ' : ' mm aa"
-        placeholderText="Select time"
+        placeholderText={t("Select time")}
         popperPlacement="top-start"
         showPopperArrow={false}
         fixedHeight

@@ -13,7 +13,8 @@
     "Add picture": "Add picture",
     "Priority": "Priority",
     "Add event": "Add event",
-    "Save": "Save"
+    "Save": "Save",
+    "Search by keywords": "Search by keywords"
   },
   "notify": {
     "Success. The event updated!": "Success. The event updated!",
@@ -23,7 +24,9 @@
     "Sorry.Something went wrong.": "Sorry.Something went wrong.",
     "Saving...": "Saving...",
     "Event deleted.": "Event deleted.",
-    "Something went wrong. Try a bit later": "Something went wrong. Try a bit later"
+    "Something went wrong. Try a bit later": "Something went wrong. Try a bit later",
+    "No data. Something went wrong.": "No data. Something went wrong.",
+    "Language was changed.": "Language was changed."
   },
 
   "Event Planner": "Event Planner",
@@ -52,5 +55,9 @@
   "priorityDESC": "Sort by priority",
   "High": "High",
   "Medium": "Medium",
-  "Low": "High"
+  "Low": "High",
+  "Select time": "Select time",
+  "Select date": "Select date",
+  "Create new event": "Create new event",
+  "Edit event": "Edit event"
 }

@@ -45,7 +45,7 @@ const DatePickerField: React.FC<IDatePickerProps> = ({
         enableTabLoop={false}
         selected={selectedDate}
         closeOnScroll={true}
-        placeholderText="Select date"
+        placeholderText={t('Select date')}
         formatWeekDay={(nameOfDay) => nameOfDay.slice(0, 3)}
         popperPlacement="top-start"
         showPopperArrow={false}

@@ -13,7 +13,8 @@
     "Add picture": "Bild hinzufügen",
     "Priority": "Priorität",
     "Add event": "Ereignis hinzufügen",
-    "Save": "Speichern"
+    "Save": "Speichern",
+    "Search by keywords": "Suche nach Stichworten"
   },
   "notify": {
     "Success. The event updated!": "Erfolg. Das Ereignis wurde aktualisiert!",
@@ -23,7 +24,9 @@
     "Sorry.Something went wrong.": "Entschuldigung. Etwas ist schief gelaufen.",
     "Saving...": "Speichern...",
     "Event deleted.": "Ereignis gelöscht.",
-    "Something went wrong. Try a bit later": "Etwas ist schief gelaufen. Bitte versuchen Sie es später erneut."
+    "Something went wrong. Try a bit later": "Etwas ist schief gelaufen. Bitte versuchen Sie es später erneut.",
+    "No data. Something went wrong.": "Keine Daten. Etwas ist schief gelaufen.",
+    "Language was changed.": "Die Sprache wurde geändert."
   },
   "Event Planner": "Eventplaner",
   "Go back": "Zurück",
@@ -51,5 +54,9 @@
   "priorityDESC": "Sortieren priorität",
   "High": "Hoch",
   "Medium": "Mittel",
-  "Low": "Niedrig"
+  "Low": "Niedrig",
+  "Select time": "Zeit auswählen",
+  "Select date": "Datum auswählen",
+  "Create new event": "Neues Ereignis erstellen",
+  "Edit event": "Ereignis bearbeiten"
 }
