@@ -194,6 +194,10 @@
   &:focus {
     box-shadow: 2px 4px 9px 0px #a68dae47;
   }
+
+  &:disabled {
+    opacity: 0.5  ;
+  }
 }
 
 .cancelButton {
