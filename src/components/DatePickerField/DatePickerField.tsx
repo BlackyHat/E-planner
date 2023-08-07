@@ -18,13 +18,10 @@ const DatePickerField: React.FC<IDatePickerProps> = ({
   const startRef = useRef<DatePicker>(null);
   const [choosedDate, setChoosedDate] = useState<Date | null>(null);
 
-  const showDatePicker = () => {
-    startRef?.current?.setOpen(true);
-  };
-
   const { t } = useTranslation();
   const { setFieldValue } = useFormikContext();
   const [field] = useField(name);
+
   const selectedDate = field.value
     ? new Date(field.value)
     : initialValue || null;
@@ -35,8 +32,8 @@ const DatePickerField: React.FC<IDatePickerProps> = ({
     startRef?.current?.setOpen(false);
   };
   const selectAbort = () => {
-    startRef?.current?.setOpen(false);
     setChoosedDate(null);
+    startRef?.current?.setOpen(false);
   };
 
   return (
@@ -52,7 +49,6 @@ const DatePickerField: React.FC<IDatePickerProps> = ({
         formatWeekDay={(nameOfDay) => nameOfDay.slice(0, 3)}
         popperPlacement="top-start"
         showPopperArrow={false}
-        onClickOutside={() => showDatePicker()}
         shouldCloseOnSelect={false}
         customInput={<DatePickerInput />}
         onChange={(val) => {
