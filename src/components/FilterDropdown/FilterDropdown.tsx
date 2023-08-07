@@ -32,6 +32,8 @@ const FilterDropdown: React.FC<DropdownProps> = ({
   const handleOptionChange = (option: string) => {
     if (isSortBy) {
       dispatch(setSortBy(option));
+    } else if (option === 'All') {
+      dispatch(setCategoryFilter(null));
     } else {
       dispatch(setCategoryFilter(option));
     }

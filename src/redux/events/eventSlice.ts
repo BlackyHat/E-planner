@@ -22,7 +22,6 @@ const eventSlice = createSlice({
   initialState: eventsInitState,
   reducers: {
     setCategoryFilter: (state, action) => {
-      console.log('setCategoryFilter');
       state.categoryFilter = action.payload;
     },
     setSortBy: (state, action) => {

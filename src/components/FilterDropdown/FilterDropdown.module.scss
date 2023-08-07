@@ -118,7 +118,8 @@
     transform: rotate(180deg);
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: var(--primary-color);
   }
 

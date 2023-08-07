@@ -9,14 +9,12 @@ import scss from './EventsToolbar.module.scss';
 const EventsToolbar = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const optionsCategories = ['All', ...Object.values(eventCategories)];
   return (
     <>
       <ul className={scss.toolbar}>
         <li>
-          <FilterDropdown
-            options={Object.values(eventCategories)}
-            title={t('Categories')}
-          />
+          <FilterDropdown options={optionsCategories} title={t('Categories')} />
         </li>
         <li>
           <FilterDropdown
