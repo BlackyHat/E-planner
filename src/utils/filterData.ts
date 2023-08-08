@@ -37,8 +37,8 @@ export const filterByKey = (filter: string, filteredEvents: IEvent[]) => {
   return filteredEvents.filter(({ title, description }) => {
     const normalizedFilter = filter.toLowerCase();
     const isInclude =
-      title.includes(normalizedFilter) ||
-      description.includes(normalizedFilter);
+      title.toLowerCase().includes(normalizedFilter) ||
+      description.toLowerCase().includes(normalizedFilter);
     return isInclude;
   });
 };

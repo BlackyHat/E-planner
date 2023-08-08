@@ -1,6 +1,7 @@
 .container {
   order: 3;
   position: relative;
+  max-width: 368px;
   @media screen and (max-width: 767px) {
     flex-basis: 100%;
   }
@@ -8,6 +9,7 @@
   @media screen and (min-width: 768px) {
     flex: 1;
     order: 2;
+    margin-left: auto;
   }
   @media screen and (min-width: 1280px) {
     max-width: 410px;

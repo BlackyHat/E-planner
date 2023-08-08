@@ -4,8 +4,8 @@
   flex-wrap: wrap;
   margin: 0 auto;
   gap: 24px;
-  @media screen and (max-width: 767px) {
-  }
+  justify-content: space-between;
+
   @media screen and (min-width: 768px) {
     max-width: 768px;
   }
@@ -27,8 +27,9 @@
 }
 
 .title {
-  flex: 1;
-
+  // flex: 1;
+  display: inline-block;
+  align-self: flex-start;
   font-family: Alata, sans-serif;
   font-size: 24px;
   font-weight: 400;
