@@ -15,6 +15,10 @@
   }
 
   & > li {
+    &.disabled {
+      cursor: initial;
+      pointer-events: none;
+    }
     width: 64px;
     height: 64px;
     cursor: pointer;
@@ -36,7 +40,8 @@
     }
   }
 
-  & > li:hover {
+  & > li:hover:not(.disabled),
+  & > li:focus:not(.disabled) {
     color: var(--primary-color);
     box-shadow: 2px 4px 9px 0px #a68dae47;
   }

@@ -12,6 +12,13 @@
   justify-content: flex-start;
   cursor: pointer;
   margin: 24px 0;
+
+  transition: letter-spacing 350ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    letter-spacing: 0.03em;
+  }
 }
 
 .linkIcon {

@@ -37,4 +37,10 @@
   text-align: left;
   white-space: nowrap;
   padding-top: 10px;
+  transition: letter-spacing 350ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    letter-spacing: 0.03em;
+  }
 }
