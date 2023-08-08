@@ -9,9 +9,9 @@ import {
 } from '../../redux/events/eventSelectors';
 import { setCategoryFilter, setSortBy } from '../../redux/events/eventSlice';
 
-import sortByicon from '../../assets/icons/sortBy.svg';
-import filter from '../../assets/icons/filter.svg';
-import arrow from '../../assets/icons/arrow-small.svg';
+import { ReactComponent as SortByIcon } from '../../assets/icons/sortBy.svg';
+import { ReactComponent as FilterIcon } from '../../assets/icons/filter.svg';
+import { ReactComponent as ArrowIcon } from '../../assets/icons/arrow-small.svg';
 import scss from './FilterDropdown.module.scss';
 
 interface DropdownProps {
@@ -60,10 +60,12 @@ const FilterDropdown: React.FC<DropdownProps> = ({
           type="button"
           aria-label={isSortBy ? 'Sort by params' : 'Filter by category'}
         >
-          <img
-            src={isSortBy ? sortByicon : filter}
-            className={scss.buttonIcon}
-          />
+          {isSortBy ? (
+            <SortByIcon className={scss.buttonIcon} />
+          ) : (
+            <FilterIcon className={scss.buttonIcon} />
+          )}
+
           <span className={scss.buttonLabel}>{t(getValue() || t(title))}</span>
         </button>
 
@@ -82,7 +84,7 @@ const FilterDropdown: React.FC<DropdownProps> = ({
               value={option}
             >
               <span>{t(option)}</span>
-              {isSortBy && <img src={arrow} className={scss.iconArrow} />}
+              {isSortBy && <ArrowIcon className={scss.iconArrow} />}
             </li>
           ))}
         </ul>

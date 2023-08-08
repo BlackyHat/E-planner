@@ -6,7 +6,7 @@ import { selectFilter } from '../../redux/events/eventSelectors';
 import { setFilter } from '../../redux/events/eventSlice';
 
 import { MdClear } from 'react-icons/md';
-import search from '../../assets/icons/search.svg';
+import { ReactComponent as SearchIcon } from '../../assets/icons/search.svg';
 import scss from './Filter.module.scss';
 import { useSearchParams } from 'react-router-dom';
 
@@ -37,7 +37,11 @@ const Filter = () => {
         className={scss.input}
         placeholder={t('form.Search by keywords')}
       />
-      <img role="graphics-symbol" src={search} className={scss.buttonIcon} />
+      <SearchIcon
+        role="graphics-symbol"
+        className={scss.buttonIcon}
+        aria-label={t('form.Search by keywords')}
+      />
       {filter && <MdClear className={scss.clearIcon} onClick={clearInput} />}
     </div>
   );
