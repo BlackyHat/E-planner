@@ -6,6 +6,7 @@ import { selectEventById } from '../../redux/events/eventSelectors';
 import { formatDate, formatTime } from '../../utils/transformDate';
 import { toast } from 'react-hot-toast';
 import { clsx } from 'clsx';
+import { useMediaQuery } from 'react-responsive';
 
 import splash from '../../assets/image-placeholder.svg';
 import scss from './EventCard.module.scss';
@@ -15,6 +16,7 @@ const EventCard = ({ id }: { id: string }) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const isRetina = useMediaQuery({ minResolution: '2dppx' });
 
   if (!event) {
     return null;
@@ -30,6 +32,13 @@ const EventCard = ({ id }: { id: string }) => {
     priority,
     imageURL,
   } = event;
+
+  const retinaImage = imageURL
+    ?.replace(/h=332/, 'h=664')
+    .replace(/w=332/, 'w=664');
+
+  const cardImage = isRetina ? retinaImage : imageURL;
+
   const handleDelete = async () => {
     try {
       await dispatch(removeEvent(id));
@@ -45,7 +54,7 @@ const EventCard = ({ id }: { id: string }) => {
       <div className={scss.card}>
         <img
           className={scss.poster}
-          src={imageURL || splash}
+          src={cardImage || splash}
           loading="lazy"
           alt={t(category)}
         />

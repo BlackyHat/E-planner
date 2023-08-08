@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { formatDate, formatTime } from '../../utils/transformDate';
 import { useTranslation } from 'react-i18next';
 import clsx from 'clsx';
+import { useMediaQuery } from 'react-responsive';
 
 import { EventProps } from '../../helpers/interfaces';
 import splash from '../../assets/image-placeholder.svg';
@@ -9,6 +10,7 @@ import scss from './EventListItem.module.scss';
 
 const EventListItem: React.FC<EventProps> = ({ data }) => {
   const navigate = useNavigate();
+  const isRetina = useMediaQuery({ minResolution: '2dppx' });
   const { t } = useTranslation();
 
   const {
@@ -23,6 +25,12 @@ const EventListItem: React.FC<EventProps> = ({ data }) => {
     imageURL,
   } = data;
 
+  const retinaImage = imageURL
+    ?.replace(/h=332/, 'h=664')
+    .replace(/w=332/, 'w=664');
+
+  const cardImage = isRetina ? retinaImage : imageURL;
+
   const handleMoreInfo = () => {
     if (!_id) {
       navigate(`/`);
@@ -34,7 +42,7 @@ const EventListItem: React.FC<EventProps> = ({ data }) => {
     <li className={scss.card}>
       <div
         className={scss.media}
-        style={{ backgroundImage: `url(${imageURL || splash})` }}
+        style={{ backgroundImage: `url(${cardImage || splash})` }}
       >
         <div className={scss.badges}>
           <span className={scss.category}>{t(category)}</span>

@@ -61,9 +61,15 @@ const FilterDropdown: React.FC<DropdownProps> = ({
           aria-label={isSortBy ? 'Sort by params' : 'Filter by category'}
         >
           {isSortBy ? (
-            <SortByIcon className={scss.buttonIcon} />
+            <SortByIcon
+              className={scss.buttonIcon}
+              aria-label={isSortBy ? 'Sort by params' : 'Filter by category'}
+            />
           ) : (
-            <FilterIcon className={scss.buttonIcon} />
+            <FilterIcon
+              className={scss.buttonIcon}
+              aria-label={isSortBy ? 'Sort by params' : 'Filter by category'}
+            />
           )}
 
           <span className={scss.buttonLabel}>{t(getValue() || t(title))}</span>
@@ -84,7 +90,12 @@ const FilterDropdown: React.FC<DropdownProps> = ({
               value={option}
             >
               <span>{t(option)}</span>
-              {isSortBy && <ArrowIcon className={scss.iconArrow} />}
+              {isSortBy && (
+                <ArrowIcon
+                  aria-label={t('Sort by')}
+                  className={scss.iconArrow}
+                />
+              )}
             </li>
           ))}
         </ul>

@@ -38,7 +38,6 @@ const Filter = () => {
         placeholder={t('form.Search by keywords')}
       />
       <SearchIcon
-        role="graphics-symbol"
         className={scss.buttonIcon}
         aria-label={t('form.Search by keywords')}
       />
