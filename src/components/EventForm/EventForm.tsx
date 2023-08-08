@@ -119,6 +119,7 @@ const EventForm = ({ id }: { id?: string }) => {
               className={scss.submitButton}
               disabled={isSubmitting || !isValid || !dirty}
               onClick={submitForm}
+              aria-label={!eventData ? t('form.Add event') : t('form.Save')}
             >
               {!eventData ? t('form.Add event') : t('form.Save')}
             </button>

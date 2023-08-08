@@ -71,6 +71,7 @@ const DatePickerField: React.FC<IDatePickerProps> = ({
               type="button"
               onClick={selectAbort}
               className={scss.cancelButton}
+              aria-label={t('Cancel')}
             >
               {t('Cancel')}
             </button>
@@ -81,6 +82,7 @@ const DatePickerField: React.FC<IDatePickerProps> = ({
               onClick={selectDate}
               className={scss.chooseButton}
               disabled={!choosedDate}
+              aria-label={t('Choose day')}
             >
               {t('Choose day')}
             </button>

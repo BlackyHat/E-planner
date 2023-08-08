@@ -39,6 +39,7 @@ const MySelectField: React.FC<MySelectField> = ({
           className={clsx(scss.button)}
           onClick={() => setOpen(!open)}
           type="button"
+          aria-label={placeholder}
         >
           {field.value || placeholder}
           <span className={scss.openIconWrapper} onClick={() => setOpen(!open)}>

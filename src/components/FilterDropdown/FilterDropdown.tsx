@@ -58,6 +58,7 @@ const FilterDropdown: React.FC<DropdownProps> = ({
           className={clsx(scss.button)}
           onClick={() => setOpen(!open)}
           type="button"
+          aria-label={isSortBy ? 'Sort by params' : 'Filter by category'}
         >
           <img
             src={isSortBy ? sortByicon : filter}

@@ -31,6 +31,7 @@ const EventsToolbar = () => {
               navigate('/create-event');
             }}
             title={t('Add new event')}
+            aria-label={t('Add new event')}
           >
             <VscAdd className={scss.activeButtonIcon} />
             <span className={scss.activeButtonLabel}>{t('Add new event')}</span>

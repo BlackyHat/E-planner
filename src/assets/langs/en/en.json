@@ -61,5 +61,8 @@
   "Create new event": "Create new event",
   "Edit event": "Edit event",
   "Event Page": "Event Page",
-  "Main page Event Planner": "Main page Event Planner"
+  "Main page Event Planner": "Main page Event Planner",
+  "Select language": "Select language",
+  "Sort by params": "Sort by params",
+  "Filter by category": "Filter by category"
 }

@@ -57,6 +57,7 @@ const EventListItem: React.FC<EventProps> = ({ data }) => {
         type="button"
         className={scss.moreInfoButton}
         onClick={handleMoreInfo}
+        aria-label={t('More info')}
       >
         {t('More info')}
       </button>

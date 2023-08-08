@@ -29,6 +29,7 @@ const LangSwitcher = () => {
           className={clsx(scss.button)}
           onClick={() => setOpen(!open)}
           type="button"
+          aria-label={t('Select language')}
         >
           <span className={scss.label}> {lang}</span>
           <span className={scss.openIconWrapper} onClick={() => setOpen(!open)}>

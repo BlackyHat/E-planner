@@ -43,7 +43,12 @@ const EventCard = ({ id }: { id: string }) => {
     <div className={scss.container}>
       <p className={scss.title}>{title}</p>
       <div className={scss.card}>
-        <img className={scss.poster} src={imageURL || splash} />
+        <img
+          className={scss.poster}
+          src={imageURL || splash}
+          loading="lazy"
+          alt={t(category)}
+        />
         <p className={scss.description}>{description}</p>
         <ul className={scss.badges}>
           <li>
@@ -68,6 +73,7 @@ const EventCard = ({ id }: { id: string }) => {
             type="button"
             className={scss.editButton}
             onClick={() => navigate(`/edit-event/${id}`)}
+            aria-label={t('Edit')}
           >
             {t('Edit')}
           </button>
@@ -75,6 +81,7 @@ const EventCard = ({ id }: { id: string }) => {
             type="button"
             className={scss.deleteButton}
             onClick={handleDelete}
+            aria-label={t('Delete event')}
           >
             {t('Delete event')}
           </button>
