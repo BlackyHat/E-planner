@@ -48,7 +48,9 @@
 
 .label {
   width: 100%;
-  color: var(--primary-color);
+  color: var(--primary-text-color);
+  text-transform: uppercase;
+  color: inherit;
 
   font-size: 16px;
   font-weight: 400;
@@ -61,18 +63,27 @@
   padding: 16px 35px 16px 12px;
   border-radius: 8px;
   border: 1px solid grey;
-  color: var(--primary-color);
+  color: var(--primary-text-color);
   background-color: var(--primary-white-color);
   outline: none;
   position: relative;
   box-shadow: 2px 4px 9px 0px #a68dae47;
   cursor: pointer;
+  transition: color 350ms ease-in-out;
 
   font-size: 16px;
   font-weight: 500;
   line-height: 16px;
   letter-spacing: 0em;
   text-align: left;
+  &:hover,
+  &:focus {
+    color: var(--primary-color);
+  }
+  &:hover .openIconWrapper,
+  &:focus .openIconWrapper {
+    color: var(--primary-color);
+  }
 }
 
 .dropdownMenu {
@@ -109,7 +120,8 @@
   color: var(--primary-text-color);
   padding: 16px 0;
   border-bottom: 1px solid #aca7c3;
-  &:hover {
+  &:hover,
+  &:focus {
     color: var(--primary-color);
   }
 }
@@ -121,11 +133,8 @@
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
+  color: inherit;
 }
 .openIcon {
-  color: var(--primary-color);
-}
-
-.label {
-  text-transform: uppercase;
+  color: inherit;
 }

@@ -49,6 +49,8 @@
   box-shadow: 2px 4px 9px 0px #a68dae47;
   border: none;
   background-color: var(--primary-white-color);
+  transition: color 350ms ease-in-out;
+
   cursor: pointer;
   @media screen and (min-width: 768px) {
     min-width: 150px;
@@ -57,13 +59,15 @@
 
   &:hover,
   &:focus {
-    opacity: 0.8;
+    color: var(--primary-color);
   }
 
-  &:hover > .buttonIcon,
-  &:focus > .buttonIcon {
-    color: var(--primary-color);
-    opacity: 0.8;
+  & svg > path {
+    transition: stroke 350ms ease-in-out;
+  }
+  &:hover svg > path,
+  &:focus svg > path {
+    stroke: var(--primary-color);
   }
 }
 
