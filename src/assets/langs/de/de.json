@@ -58,5 +58,15 @@
   "Select time": "Zeit auswählen",
   "Select date": "Datum auswählen",
   "Create new event": "Neues Ereignis erstellen",
-  "Edit event": "Ereignis bearbeiten"
+  "Edit event": "Ereignis bearbeiten",
+  "Event Page": "Veranstaltungsseite",
+  "Main page Event Planner": "Hauptseite Event-Planer",
+  "Select language": "Sprache auswählen",
+  "Sort by params": "Nach Parametern sortieren",
+  "Filter by category": "Nach Kategorie filtern",
+  "Language menu": "Sprachmenü",
+  "Add": "Hinzufügen",
+  "Next": "Weiter",
+  "Prev": "Zurück",
+  "Clear": "Löschen"
 }

@@ -1,5 +1,11 @@
 import { IEvent } from '../helpers/interfaces';
 
+const priorityOrder: Record<string, number> = {
+  High: 1,
+  Medium: 2,
+  Low: 3,
+};
+
 export const sortByCondition = (sortBy: string, filteredEvents: IEvent[]) => {
   switch (sortBy) {
     case 'byNameASC':
@@ -19,13 +25,13 @@ export const sortByCondition = (sortBy: string, filteredEvents: IEvent[]) => {
       );
 
     case 'priorityASC':
-      return filteredEvents.sort((a, b) =>
-        a.priority.localeCompare(b.priority)
+      return filteredEvents.sort(
+        (a, b) => priorityOrder[a.priority] - priorityOrder[b.priority]
       );
 
     case 'priorityDESC':
-      return filteredEvents.sort((a, b) =>
-        b.priority.localeCompare(a.priority)
+      return filteredEvents.sort(
+        (a, b) => priorityOrder[b.priority] - priorityOrder[a.priority]
       );
 
     default:
