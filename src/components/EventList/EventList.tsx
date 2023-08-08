@@ -1,5 +1,6 @@
 import EventListItem from '../EventListItem/EventListItem';
 import { IEvent } from '../../helpers/interfaces';
+
 import scss from './EventList.module.scss';
 
 const EventList: React.FC<{ events: IEvent[] }> = ({ events }) => {

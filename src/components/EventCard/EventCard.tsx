@@ -1,12 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useAppDispatch, useAppSelector } from '../../redux/hooks';
-import { removeEvent } from '../../redux/events/eventsOperations';
-import { selectEventById } from '../../redux/events/eventSelectors';
-import { formatDate, formatTime } from '../../utils/transformDate';
 import { toast } from 'react-hot-toast';
 import { clsx } from 'clsx';
 import { useMediaQuery } from 'react-responsive';
+
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { selectEventById } from '../../redux/events/eventSelectors';
+import { removeEvent } from '../../redux/events/eventsOperations';
+import { formatDate, formatTime } from '../../utils/transformDate';
 
 import splash from '../../assets/image-placeholder.svg';
 import scss from './EventCard.module.scss';

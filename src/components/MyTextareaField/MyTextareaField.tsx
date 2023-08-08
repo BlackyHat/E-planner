@@ -33,25 +33,23 @@ const MyTextareaField = ({
   };
 
   return (
-    <>
-      <label className={scss.label}>
-        {label}
-        <textarea
-          className={clsx(
-            scss.input,
-            meta.error && meta.touched ? scss.isInvalid : ''
-          )}
-          {...field}
-          {...props}
-        />
-        {field.value && (
-          <MdClear className={scss.clearIcon} onClick={clearInput} />
+    <label className={scss.label}>
+      {label}
+      <textarea
+        className={clsx(
+          scss.input,
+          meta.error && meta.touched ? scss.isInvalid : ''
         )}
-        {meta.touched && meta.error ? (
-          <div className={scss.errorMessage}>{meta.error}</div>
-        ) : null}
-      </label>
-    </>
+        {...field}
+        {...props}
+      />
+      {field.value && (
+        <MdClear className={scss.clearIcon} onClick={clearInput} />
+      )}
+      {meta.touched && meta.error ? (
+        <div className={scss.errorMessage}>{meta.error}</div>
+      ) : null}
+    </label>
   );
 };
 

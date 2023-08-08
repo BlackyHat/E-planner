@@ -1,6 +1,8 @@
 import React, { forwardRef } from 'react';
-import scss from './DatePickerInput.module.scss';
+import { useTranslation } from 'react-i18next';
+
 import { BsChevronCompactDown } from 'react-icons/bs';
+import scss from './DatePickerInput.module.scss';
 
 const DatePickerInput = forwardRef(
   (
@@ -8,6 +10,7 @@ const DatePickerInput = forwardRef(
     ref: React.Ref<HTMLInputElement>
   ) => {
     const { value, onClick, placeholder, name } = props;
+    const { t } = useTranslation();
 
     return (
       <label className={scss.label}>
@@ -21,7 +24,10 @@ const DatePickerInput = forwardRef(
           ref={ref}
         />
         <span className={scss.openIconWrapper} onClick={onClick}>
-          <BsChevronCompactDown className={scss.openIcon} />
+          <BsChevronCompactDown
+            className={scss.openIcon}
+            aria-label={t('Select')}
+          />
         </span>
       </label>
     );

@@ -1,10 +1,11 @@
 import { useNavigate } from 'react-router-dom';
-import { formatDate, formatTime } from '../../utils/transformDate';
 import { useTranslation } from 'react-i18next';
-import clsx from 'clsx';
 import { useMediaQuery } from 'react-responsive';
+import clsx from 'clsx';
 
+import { formatDate, formatTime } from '../../utils/transformDate';
 import { EventProps } from '../../helpers/interfaces';
+
 import splash from '../../assets/image-placeholder.svg';
 import scss from './EventListItem.module.scss';
 
@@ -24,6 +25,7 @@ const EventListItem: React.FC<EventProps> = ({ data }) => {
     priority,
     imageURL,
   } = data;
+
 
   const retinaImage = imageURL
     ?.replace(/h=332/, 'h=664')

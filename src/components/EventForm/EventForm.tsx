@@ -1,18 +1,21 @@
+import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Formik, Form } from 'formik';
 import { toast } from 'react-hot-toast';
+
+import { addEvent, updateEvent } from '../../redux/events/eventsOperations';
+import { selectEventById } from '../../redux/events/eventSelectors';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { eventSchema } from '../../validation/validationYup';
-import scss from './EventForm.module.scss';
+import { eventCategories, eventPriorites } from '../../helpers/enums';
+
 import MyTextField from '../MyTextField/MyTextField';
 import MyTextareaField from '../MyTextareaField/MyTextareaField';
 import DatePickerField from '../DatePickerField/DatePickerField';
 import TimePickerField from '../TimePickerField/TimePickerField';
 import MySelectField from '../MySelectField/MySelectField';
-import { eventCategories, eventPriorites } from '../../helpers/enums';
-import { useAppDispatch, useAppSelector } from '../../redux/hooks';
-import { addEvent, updateEvent } from '../../redux/events/eventsOperations';
-import { selectEventById } from '../../redux/events/eventSelectors';
-import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+
+import scss from './EventForm.module.scss';
 
 const EventForm = ({ id }: { id?: string }) => {
   const eventData = id ? useAppSelector(selectEventById(id)) : null;

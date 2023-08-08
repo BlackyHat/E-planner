@@ -32,7 +32,7 @@ const TimePickerField: React.FC<ITimePickerFieldProps> = ({
         showTimeSelectOnly
         timeIntervals={15}
         dateFormat="hh ' : ' mm aa"
-        placeholderText={t("Select time")}
+        placeholderText={t('Select time')}
         popperPlacement="top-start"
         showPopperArrow={false}
         fixedHeight

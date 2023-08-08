@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
-import { useAppSelector } from '../../redux/hooks';
-import { selectFilteredEvents } from '../../redux/events/eventSelectors';
+import { useTranslation } from 'react-i18next';
 import ReactPaginate from 'react-paginate';
 
 import EventList from '../EventList/EventList';
+import { useAppSelector } from '../../redux/hooks';
+import { selectFilteredEvents } from '../../redux/events/eventSelectors';
+
 import { GrNext, GrPrevious } from 'react-icons/gr';
 import scss from './Pagination.module.scss';
 
@@ -19,6 +21,7 @@ const PaginatedItems: React.FC<PaginatedItemsProps> = ({
   const items = useAppSelector(selectFilteredEvents);
   const [_, setSearchParams] = useSearchParams();
   const [itemOffset, setItemOffset] = useState(0);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const pageNumber = Math.ceil((itemOffset + itemsPerPage) / itemsPerPage);
@@ -43,12 +46,14 @@ const PaginatedItems: React.FC<PaginatedItemsProps> = ({
       {items.length > itemsPerPage && (
         <ReactPaginate
           breakLabel="..."
-          nextLabel={<GrNext className={scss.next} />}
+          nextLabel={<GrNext className={scss.next} aria-label={t('Next')} />}
           onPageChange={handlePageClick}
           pageRangeDisplayed={pageRangeDisplayed}
           marginPagesDisplayed={1}
           pageCount={pageCount}
-          previousLabel={<GrPrevious className={scss.prev} />}
+          previousLabel={
+            <GrPrevious className={scss.prev} aria-label={t('Prev')} />
+          }
           renderOnZeroPageCount={null}
           className={scss.pagination}
           activeLinkClassName={scss.active}

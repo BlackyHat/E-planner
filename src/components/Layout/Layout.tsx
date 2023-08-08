@@ -1,7 +1,9 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import scss from './Layout.module.scss';
+
 import AppBar from '../AppBar/AppBar';
+
+import scss from './Layout.module.scss';
 
 const Layout = () => {
   return (

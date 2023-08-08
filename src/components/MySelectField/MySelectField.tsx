@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useField, useFormikContext } from 'formik';
+import { useTranslation } from 'react-i18next';
 import clsx from 'clsx';
 
 import { BsChevronCompactDown } from 'react-icons/bs';
@@ -21,6 +22,7 @@ const MySelectField: React.FC<MySelectField> = ({
   const [field] = useField(props);
   const { setFieldValue } = useFormikContext();
   const [open, setOpen] = useState(false);
+  const { t } = useTranslation();
 
   const handleOptionChange = (option: string) => {
     setFieldValue(field.name, option);
@@ -43,7 +45,10 @@ const MySelectField: React.FC<MySelectField> = ({
         >
           {field.value || placeholder}
           <span className={scss.openIconWrapper} onClick={() => setOpen(!open)}>
-            <BsChevronCompactDown className={scss.openIcon} />
+            <BsChevronCompactDown
+              className={scss.openIcon}
+              aria-label={t('Select')}
+            />
           </span>
         </button>
 

@@ -33,7 +33,10 @@ const LangSwitcher = () => {
         >
           <span className={scss.label}> {lang}</span>
           <span className={scss.openIconWrapper} onClick={() => setOpen(!open)}>
-            <BsChevronCompactDown className={scss.openIcon} />
+            <BsChevronCompactDown
+              className={scss.openIcon}
+              aria-label={t('Select language')}
+            />
           </span>
         </button>
 

@@ -1,5 +1,6 @@
 import { ClassAttributes, InputHTMLAttributes } from 'react';
 import { useField, FieldHookConfig } from 'formik';
+import { useTranslation } from 'react-i18next';
 import clsx from 'clsx';
 
 import { MdClear } from 'react-icons/md';
@@ -18,36 +19,39 @@ const MyTextField = ({
   ClassAttributes<HTMLInputElement> &
   FieldHookConfig<string>) => {
   const [field, meta, helpers] = useField(props);
+  const { t } = useTranslation();
 
   const clearInput = () => {
     helpers.setValue('');
   };
   return (
-    <>
-      <label
+    <label
+      className={clsx(
+        scss.label,
+        props.name === 'imageURL' && scss.inAActiveLabel
+      )}
+    >
+      {label}
+      <input
         className={clsx(
-          scss.label,
-          props.name === 'imageURL' && scss.inAActiveLabel
+          scss.input,
+          meta.error && meta.touched ? scss.isInvalid : ''
         )}
-      >
-        {label}
-        <input
-          className={clsx(
-            scss.input,
-            meta.error && meta.touched ? scss.isInvalid : ''
-          )}
-          disabled={disabled}
-          {...field}
-          {...props}
+        disabled={disabled}
+        {...field}
+        {...props}
+      />
+      {field.value && !disabled && (
+        <MdClear
+          className={scss.clearIcon}
+          onClick={clearInput}
+          aria-label={t('Clear')}
         />
-        {field.value && !disabled && (
-          <MdClear className={scss.clearIcon} onClick={clearInput} />
-        )}
-        {meta.touched && meta.error ? (
-          <div className={scss.errorMessage}>{meta.error}</div>
-        ) : null}
-      </label>
-    </>
+      )}
+      {meta.touched && meta.error ? (
+        <div className={scss.errorMessage}>{meta.error}</div>
+      ) : null}
+    </label>
   );
 };
 

@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useField, useFormikContext } from 'formik';
-import DatePicker from 'react-datepicker';
 import { useTranslation } from 'react-i18next';
+import DatePicker from 'react-datepicker';
 
 import DatePickerInput from '../DatePickerInput/DatePickerInput';
 import scss from './DatePickerField.module.scss';

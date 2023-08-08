@@ -14,12 +14,7 @@
     "Priority": "Priority",
     "Add event": "Add event",
     "Save": "Save",
-    "Search by keywords": "Search by keywords",
-    "Event title": "Event title",
-    "Event description": "Event description",
-    "Event location": "Event location",
-    "Select categoty": "Select categoty",
-    "Event priority": "Event priority"
+    "Search by keywords": "Search by keywords"
   },
   "notify": {
     "Success. The event updated!": "Success. The event updated!",
@@ -60,7 +55,7 @@
   "priorityDESC": "Sort by priority",
   "High": "High",
   "Medium": "Medium",
-  "Low": "High",
+  "Low": "Low",
   "Select time": "Select time",
   "Select date": "Select date",
   "Create new event": "Create new event",
@@ -69,5 +64,10 @@
   "Main page Event Planner": "Main page Event Planner",
   "Select language": "Select language",
   "Sort by params": "Sort by params",
-  "Filter by category": "Filter by category"
+  "Filter by category": "Filter by category",
+  "Language menu": "Language menu",
+  "Add": "Add",
+  "Next": "Next",
+  "Prev": "Prev",
+  "Clear": "Clear"
 }
