@@ -37,7 +37,7 @@ const Filter = () => {
         className={scss.input}
         placeholder={t('form.Search by keywords')}
       />
-      <img src={search} className={scss.buttonIcon} />
+      <img role="graphics-symbol" src={search} className={scss.buttonIcon} />
       {filter && <MdClear className={scss.clearIcon} onClick={clearInput} />}
     </div>
   );

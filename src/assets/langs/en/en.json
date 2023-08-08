@@ -14,7 +14,12 @@
     "Priority": "Priority",
     "Add event": "Add event",
     "Save": "Save",
-    "Search by keywords": "Search by keywords"
+    "Search by keywords": "Search by keywords",
+    "Event title": "Event title",
+    "Event description": "Event description",
+    "Event location": "Event location",
+    "Select categoty": "Select categoty",
+    "Event priority": "Event priority"
   },
   "notify": {
     "Success. The event updated!": "Success. The event updated!",

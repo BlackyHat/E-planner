@@ -76,6 +76,7 @@ const EventForm = ({ id }: { id?: string }) => {
               name="title"
               type="text"
               placeholder={t('form.titlePlaceholder')}
+              aria-label={t('form.Event title')}
             />
             <MyTextareaField
               label={t('form.Description')}
@@ -83,21 +84,24 @@ const EventForm = ({ id }: { id?: string }) => {
               type="text"
               placeholder={t('form.descriptionPlaceholder')}
               component="textarea"
+              aria-label={t('form.Event description')}
               rows={5}
             />
-            <DatePickerField name="date" />
-            <TimePickerField name="time" />
+            <DatePickerField name="date" aria-label={t('Select date')} />
+            <TimePickerField name="time" aria-label={t('Select time')} />
             <MyTextField
               label={t('form.Location')}
               name="location"
               type="text"
               placeholder={t('form.locationPlaceholder')}
+              aria-label={t('form.Event location')}
             />
             <MySelectField
               label={t('form.Category')}
               name="category"
               placeholder={t('form.categoryPlaceholder')}
               options={Object.values(eventCategories)}
+              aria-label={t('form.Select categoty')}
             />
 
             <MyTextField
@@ -106,6 +110,7 @@ const EventForm = ({ id }: { id?: string }) => {
               type="text"
               disabled={true}
               placeholder={t('form.imagePlaceholder')}
+              aria-label={t('form.Add picture')}
             />
 
             <MySelectField
@@ -113,6 +118,7 @@ const EventForm = ({ id }: { id?: string }) => {
               name="priority"
               placeholder={t('form.priorityPlaceholder')}
               options={Object.values(eventPriorites)}
+              aria-label={t('form.Event priority')}
             />
             <button
               type="submit"
